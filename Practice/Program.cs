@@ -1,5 +1,5 @@
 ﻿using System;
-using Practice.Arrays.SumOfOddLength;
+using Practice.Arrays.CountGoodTriplets;
 
 namespace Practice
 {
@@ -9,7 +9,12 @@ namespace Practice
         {
             CodeFile ob = new CodeFile();
             var input = new int[] { 10,11,12 };
-            var output = ob.SumOddLengthSubarrays(input);
+
+            var input1 = new int[] { 1, 1, 2, 2, 3 };
+            int a = 0;
+            int b = 0;
+            int c = 1;
+            var output = ob.CountGoodTriplets(input1,a,b,c);
             Console.WriteLine(output);
         }
     }
