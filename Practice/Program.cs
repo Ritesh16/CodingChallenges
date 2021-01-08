@@ -1,5 +1,5 @@
 ﻿using System;
-using Practice.Arrays.High5;
+using Practice.Arrays.LargestUniqueNumber_M;
 
 namespace Practice
 {
@@ -7,6 +7,8 @@ namespace Practice
     {
         static void Main(string[] args)
         {
+            var data = Decimal.Parse("0002654");
+            var rrrrr = "ritesh".PadLeft(10, '0');
             CodeFile ob = new CodeFile();
             var input = new int[] { 10,11,12 };
 
@@ -30,11 +32,15 @@ namespace Practice
                 new int[] {2, 76 }
            };
 
-            var output = ob.HighFive(input2);
-            for (int i = 0; i < output.Length; i++)
-            {
-                Console.WriteLine(output[i][0] + " , " + output[i][1]);
-            }
+            var input3 = new int[] { 2, 5, 3, 4, 1 };
+            var input4 = new int[] { 5, 7, 3, 9, 4, 9, 8, 3, 1 };
+            var output = ob.LargestUniqueNumber1(input4);
+            //for (int i = 0; i < output.Length; i++)
+            //{
+            //    Console.WriteLine(output[i][0] + " , " + output[i][1]);
+            //}
+
+            Console.WriteLine(output);
         }
     }
 }
