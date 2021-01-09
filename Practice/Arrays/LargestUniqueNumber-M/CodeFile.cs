@@ -54,7 +54,7 @@ namespace Practice.Arrays.LargestUniqueNumber_M
                 }
             }
 
-            return ss.Count == 0 ? -1 : ss.Max();
+            return ss.Count == 0 ? -1 : ss.First();
         }
     }
 }

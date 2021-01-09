@@ -1,5 +1,6 @@
 ﻿using System;
-using Practice.Arrays.LargestUniqueNumber_M;
+using Practice.Strings.ReverseString;
+using Practice.Algorithms.Sorting;
 
 namespace Practice
 {
@@ -34,13 +35,18 @@ namespace Practice
 
             var input3 = new int[] { 2, 5, 3, 4, 1 };
             var input4 = new int[] { 5, 7, 3, 9, 4, 9, 8, 3, 1 };
-            var output = ob.LargestUniqueNumber1(input4);
-            //for (int i = 0; i < output.Length; i++)
-            //{
-            //    Console.WriteLine(output[i][0] + " , " + output[i][1]);
-            //}
+            var input5 = new int[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
+            var input6 = new char[] { 'h', 'e', 'l', 'l', 'o' , '1' };
 
-            Console.WriteLine(output);
+            //var output = ob.ReverseString(input6);
+            var obj = new InsertionSort();
+            var output = obj.Sort(input3);
+            for (int i = 0; i < output.Length; i++)
+            {
+                Console.Write(output[i]);
+            }
+
+            //Console.WriteLine(output);
         }
     }
 }
