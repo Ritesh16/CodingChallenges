@@ -1,7 +1,5 @@
 ﻿using System;
-using Practice.Algorithms.Sorting;
-
-using Practice.LinkedList.RemoveNthNode;
+using Practice.Arrays.MoveZeros;
 
 namespace Practice
 {
@@ -10,25 +8,23 @@ namespace Practice
         static void Main(string[] args)
         {
             CodeFile ob = new CodeFile();
-            var obj = new InsertionSort();
 
-            
-            var node = ob.Load();
+            //int[] arr = new int[10] { 56, 1, 99, 67, 89, 23, 44, 12, 78, 34 };
+            //SelectionSort sort = new SelectionSort();
+            //var o = sort.Sort(arr);
 
-            node = ob.RemoveNthFromEndOnePass(node, 5);
 
-            while (node != null)
+            //var output = ob.IsPalindromeSecond("Aman, a plan, a canal: Panama");
+
+            var input = new int[] { 0, 1, 0, 3, 12 };
+
+            var output = ob.MoveZeroes(input);
+
+            for (int i = 0; i < output.Length; i++)
             {
-                Console.WriteLine(node.Value);
-                node = node.next;
+                Console.WriteLine(output[i]);
             }
 
-            //for (int i = 0; i < output.Length; i++)
-            //{
-            //    Console.WriteLine(output[i]);
-            //}
-
-            //Console.WriteLine(output);
         }
     }
 }
