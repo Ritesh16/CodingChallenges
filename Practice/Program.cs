@@ -1,5 +1,6 @@
 ﻿using System;
-using Practice.Arrays.MoveZeros;
+using System.Collections.Generic;
+using Practice.Arrays.CountItemsMatchingRule;
 
 namespace Practice
 {
@@ -16,14 +17,40 @@ namespace Practice
 
             //var output = ob.IsPalindromeSecond("Aman, a plan, a canal: Panama");
 
-            var input = new int[] { 0, 1, 0, 3, 12 };
+            //var input = new int[] { 4, 1, 2, 1, 2 };
 
-            var output = ob.MoveZeroes(input);
+            var list1 = new List<string>();
+            list1.Add("phone");
+            list1.Add("blue");
+            list1.Add("pixel");
 
-            for (int i = 0; i < output.Length; i++)
-            {
-                Console.WriteLine(output[i]);
-            }
+            var list2 = new List<string>();
+            list2.Add("computer");
+            list2.Add("silver");
+            list2.Add("phone");
+
+            var list3 = new List<string>();
+            list3.Add("phone");
+            list3.Add("gold");
+            list3.Add("iphone");
+
+            var list = new List<IList<string>>();
+            list.Add(list1);
+            list.Add(list2);
+            list.Add(list3);
+
+            string ruleKey = "type";
+            string ruleValue = "phone";
+
+
+            //var output = ob.MoveZeroes(input);
+            var output = ob.CountMatches(list, ruleKey, ruleValue);
+            //for (int i = 0; i < output.Length; i++)
+            //{
+            //    Console.WriteLine(output[i]);
+            //}
+
+            Console.WriteLine(output);
 
         }
     }
