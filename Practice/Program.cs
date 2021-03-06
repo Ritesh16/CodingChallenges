@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Practice.Arrays.RotateArray;
+using Practice.Arrays.ContainsDuplicate;
 
 namespace Practice
 {
@@ -31,9 +31,9 @@ namespace Practice
 
             var input = new int[] { 1,2,3,4,5,6,7 };
 
-            ob.Rotate(input, 3);
+            var output = ob.ContainsDuplicate(input);
 
-            //Console.WriteLine(output);
+            Console.WriteLine(output);
 
         }
     }
