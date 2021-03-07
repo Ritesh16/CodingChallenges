@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Practice.Arrays.ContainsDuplicate;
+using Practice.Arrays.IntersectionofTwoArrays_II;
 
 namespace Practice
 {
@@ -9,31 +9,15 @@ namespace Practice
         static void Main(string[] args)
         {
             CodeFile ob = new CodeFile();
+            var input1 = new int[] { 3,1,2 };
+            var input2 = new int[] { 1,3 };
 
-            //int[] arr = new int[10] { 56, 1, 99, 67, 89, 23, 44, 12, 78, 34 };
-            //SelectionSort sort = new SelectionSort();
-            //var o = sort.Sort(arr);
-
-
-            //var output = ob.IsPalindromeSecond("Aman, a plan, a canal: Panama");
-
-            //var input = new int[] { 4, 1, 2, 1, 2 };
-
-
-
-
-            //var output = ob.MoveZeroes(input);
-            //var output = ob.CountMatches(list, ruleKey, ruleValue);
-            //for (int i = 0; i < output.Length; i++)
-            //{
-            //    Console.WriteLine(output[i]);
-            //}
-
-            var input = new int[] { 1,2,3,4,5,6,7 };
-
-            var output = ob.ContainsDuplicate(input);
-
-            Console.WriteLine(output);
+            var output = ob.Intersect(input1, input2);
+            foreach (var item in output)
+            {
+                Console.WriteLine(item);
+            }
+            
 
         }
     }

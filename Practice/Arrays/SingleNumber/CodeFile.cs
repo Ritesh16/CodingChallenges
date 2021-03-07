@@ -8,6 +8,8 @@ namespace Practice.Arrays.SingleNumber
     {
         public int SingleNumber(int[] nums)
         {
+            var a = 10 ^ 5;
+            a = a ^ 5;
             var result = 0;
             for (int i = 0; i < nums.Length; i++)
             {
