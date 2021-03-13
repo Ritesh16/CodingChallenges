@@ -6,25 +6,29 @@ namespace Practice.Arrays.DuplicateZeros
 {
     public class CodeFile
     {
-        public void DuplicateZeros(int[] arr)
+        public void DuplicateZeros1(int[] arr)
         {
             int i = 0;
             int j = 0;
-            int next = 0;
 
-            while (i < arr.Length - 1)
+            var output = new int[arr.Length];
+     
+            while (i < arr.Length)
             {
-                if (arr[i] == 0)
+                output[i] = arr[j];
+                if (output[i] == 0 && i < arr.Length-1)
                 {
-                    next = arr[i + 1];
-                    arr[i + 1] = 0;
+                    output[i + 1] = 0;
+                    i++;
                 }
 
                 i++;
                 j++;
             }
+
+            Array.Copy(output, arr, arr.Length);
         }
-        public void DuplicateZeros_ExtraMemory(int[] arr)
+        public void DuplicateZeros(int[] arr)
         {
             var count = 0;
             for (var i = 0; i < arr.Length; i++)
@@ -59,7 +63,7 @@ namespace Practice.Arrays.DuplicateZeros
             }
 
 
-            arr = newArray;
+            Array.Copy(newArray, arr, arr.Length);
         }
     }
 }

@@ -9,9 +9,9 @@ namespace Practice
         static void Main(string[] args)
         {
             CodeFile ob = new CodeFile();
-            var input = new int[] { 1, 0, 2, 3, 0, 4, 5, 0 };
+            var input = new int[] { 0, 1, 7, 6, 0, 2, 0, 7 };
 
-            ob.DuplicateZeros(input);
+            ob.DuplicateZeros1(input);
 
             //foreach (var item in output)
             //{
