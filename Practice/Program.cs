@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Practice.Arrays.MergeSortedArray;
+using Practice.Arrays.RemoveElement;
 
 namespace Practice
 {
@@ -10,16 +10,14 @@ namespace Practice
         {
             CodeFile ob = new CodeFile();
            
-            var array1 = new int[] { 1, 2, 4, 0, 0, 0 };
-            var array2 = new int[] { 2, 3, 7 };
-            int m = 3;
-            int n = 3;
+            var array1 = new int[] { 0, 1, 2, 2, 3, 0, 4, 2 };
+            int m = 2;
 
-            ob.Merge1(array1, m, array2, n);
+            var output= ob.RemoveElement(array1, m);
 
             //foreach (var item in output)
             //{
-            //    Console.WriteLine(item);
+                Console.WriteLine(output);
             //}
 
         }
