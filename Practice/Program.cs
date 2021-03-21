@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Practice.Arrays.ValidMountainArray;
+using System.Diagnostics;
+using Practice.Arrays.ThirdMaximumNumber;
 
 namespace Practice
 {
@@ -10,18 +11,23 @@ namespace Practice
         {
             CodeFile ob = new CodeFile();
 
-            var array1 = new int[] { 0, 1, 2, 2, 3, 0, 4, 2 };
-            int m = 2;
-            var array2 = new int[] { 1, 1, 1, 1, 1, 1, 1, 2, 1};
-
-
-            var output = ob.ValidMountainArray(array2);
-
-            //foreach (var item in output)
+            //Stopwatch sw = new Stopwatch();
+            //sw.Start();
+            //for (int i = 0; i < 10000; i++)
             //{
-            Console.WriteLine(output);
+
+
             //}
 
+            //sw.Stop();
+
+            var array2 = new int[] { 1,1,2 };
+
+
+            var output = ob.ThirdMax(array2);
+            Console.WriteLine(output);
+
+            //Console.WriteLine("Milliseconds :" + sw.ElapsedMilliseconds);
         }
     }
 }
