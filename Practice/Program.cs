@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Practice.Arrays.ThirdMaximumNumber;
+using Practice.Arrays.FindNumbersDisappearedinArray;
 
 namespace Practice
 {
@@ -21,11 +21,15 @@ namespace Practice
 
             //sw.Stop();
 
-            var array2 = new int[] { 1,1,2 };
+            var array2 = new int[] { 1,1};
 
 
-            var output = ob.ThirdMax(array2);
-            Console.WriteLine(output);
+            var output = ob.FindDisappearedNumbers(array2);
+            foreach (var item in output)
+            {
+                Console.WriteLine(item);
+            }
+//            Console.WriteLine(output);
 
             //Console.WriteLine("Milliseconds :" + sw.ElapsedMilliseconds);
         }
