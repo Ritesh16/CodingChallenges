@@ -8,7 +8,6 @@ namespace Practice.LinkedList.DesignLinkedList
     {
         public int Count { get; set; }
         public LinkedListNode Head;
-        public LinkedListNode Tail;
 
         /** Initialize your data structure here. */
         public MyLinkedList()
@@ -34,6 +33,11 @@ namespace Practice.LinkedList.DesignLinkedList
 
         private LinkedListNode GetNode(int index)
         {
+            if (index < 0)
+            {
+                return null;
+            }
+
             LinkedListNode head = Head;
             for (int i = 0; i < index; ++i)
             {
@@ -44,20 +48,23 @@ namespace Practice.LinkedList.DesignLinkedList
             return head;
         }
 
+        private LinkedListNode GetTail()
+        {
+            LinkedListNode cur = Head;
+            while (cur != null && cur.Next != null)
+            {
+                cur = cur.Next;
+            }
+
+            return cur;
+        }
+
         /** Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list. */
         public void AddAtHead(int val)
         {
-            if (Head == null)
-            {
-                Head = new LinkedListNode(val);
-                Tail = Head;
-            }
-            else
-            {
-                var node = new LinkedListNode(val);
-                node.Next = Head;
-                Head = node;
-            }
+            var node = new LinkedListNode(val);
+            node.Next = Head;
+            Head = node;
 
             Count++;
         }
@@ -70,13 +77,10 @@ namespace Practice.LinkedList.DesignLinkedList
                 AddAtHead(val);
                 return;
             }
-            else
-            {
-                var tail = new LinkedListNode(val);
 
-                Tail.Next = tail;
-                Tail = tail;
-            }
+            var tail = GetTail();
+            var node = new LinkedListNode(val);
+            tail.Next = node;
 
             Count++;
         }
@@ -84,39 +88,23 @@ namespace Practice.LinkedList.DesignLinkedList
         /** Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted. */
         public void AddAtIndex(int index, int val)
         {
-            if (index > Count || index < 0)
-            {
-                return;
-            }
-
             if (index == 0)
             {
                 AddAtHead(val);
                 return;
             }
 
-            if (index == Count)
+
+            var prevNode = GetNode(index - 1);
+            if (prevNode == null)
             {
-                AddAtTail(val);
                 return;
             }
 
-            var head = Head;
-            var i = 0;
-            while (head != null)
-            {
-                if (i == index - 1)
-                {
-                    var node = new LinkedListNode(val);
-                    var next = head.Next;
-
-                    head.Next = node;
-                    head.Next.Next = next;
-                }
-
-                i++;
-                head = head.Next;
-            }
+            var next = prevNode.Next;
+            var newNode = new LinkedListNode(val);
+            prevNode.Next = newNode;
+            newNode.Next = next;
 
             Count++;
         }
@@ -129,43 +117,24 @@ namespace Practice.LinkedList.DesignLinkedList
                 return;
             }
 
-            if (index == 0)
+            var currNode = GetNode(index);
+            if (currNode == null)
             {
-                Head = Head.Next;
+                return;
             }
 
-            var head = Head;
-            var i = 0;
-            while (head != null)
+            var prev = GetNode(index - 1);
+            if (prev != null)
             {
-                if (i == index - 1)
-                {
-                    if (head.Next == null)
-                    {
-                        Head = null;
-                        Tail = null;
-                    }
-                    else
-                    {
-                        head.Next = head.Next.Next;
-                    }
-
-                    break;
-                }
-
-                i++;
-                head = head.Next;
+                prev.Next = currNode.Next;
             }
-
-
+            else
+            {
+                // modify head when deleting the first node.
+                Head = currNode.Next;
+            }
 
             Count--;
-            if (Count == 0)
-            {
-                Head = null;
-                Tail = null;
-            }
-
         }
     }
 }
