@@ -6,7 +6,28 @@ namespace Practice.LinkedList.LinkedListCycleII
 {
     public class CodeFile
     {
+        // O(1) --- Space
+        //  O(n) --- Time
         public ListNode DetectCycle(ListNode head)
+        {
+            var hashTable = new HashSet<ListNode>();
+            var elem = head;
+            while (elem != null)
+            {
+                if (hashTable.Contains(elem))
+                {
+                    return elem;
+                }
+
+                hashTable.Add(elem);
+                elem = elem.next;
+            }
+
+            return null;
+        }
+        // O(1) --- Space
+        //  O(n) --- Time
+        public ListNode DetectCycle1(ListNode head)
         {
             if (head == null)
             {
@@ -48,17 +69,6 @@ namespace Practice.LinkedList.LinkedListCycleII
             }
 
             return null;
-        }
-    }
-
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int x)
-        {
-            val = x;
-            next = null;
         }
     }
 }

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Practice.LinkedList.DesignLinkedList;
+using Practice.LinkedList;
+using Practice.LinkedList.LinkedListCycle;
 
 namespace Practice
 {
@@ -9,7 +10,7 @@ namespace Practice
     {
         static void Main(string[] args)
         {
-            //CodeFile ob = new CodeFile();
+            CodeFile ob = new CodeFile();
 
             //Stopwatch sw = new Stopwatch();
             //sw.Start();
@@ -21,16 +22,16 @@ namespace Practice
 
             //sw.Stop();
 
-            var list = new MyLinkedList();
-            list.AddAtHead(1);
-            list.AddAtTail(3);
-            list.AddAtIndex(1,2);
+            var node = new ListNode(1);
+            node.next = new ListNode(2);
+            var d  = new ListNode(3);
 
-            var id= list.Get(1);
+            node.next.next = d;
 
-            list.DeleteAtIndex(0);
+            //d.next = node.next;
 
-            var g = list.Get(0);
+            var output = ob.HasCycle(node);
+            Console.WriteLine(output);
         }
     }
 }
