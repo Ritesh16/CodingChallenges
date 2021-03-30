@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using Practice.LinkedList;
-using Practice.LinkedList.LinkedListCycle;
+using Practice.LinkedList.Intersectionof2LinkedList;
 
 namespace Practice
 {
@@ -24,14 +24,21 @@ namespace Practice
 
             var node = new ListNode(1);
             node.next = new ListNode(2);
-            var d  = new ListNode(3);
+            node.next.next = new ListNode(3);
 
-            node.next.next = d;
+            var intersection = new ListNode(4);
+            node.next.next.next = intersection;
 
+            var node2 = new ListNode(1);
+            node2.next = new ListNode(2);
+            node2.next = intersection;
+
+            intersection.next = new ListNode(5);
+            intersection.next.next = new ListNode(6);
             //d.next = node.next;
 
-            var output = ob.HasCycle(node);
-            Console.WriteLine(output);
+            var output = ob.getIntersectionNode(node, node2);
+            Console.WriteLine(output.val);
         }
     }
 }
