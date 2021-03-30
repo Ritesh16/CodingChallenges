@@ -1,1 +1,12 @@
-﻿
+﻿1. You can use the two-pointers for some problems. Also, we can vary the speed of the pointers.
+
+For eg. in beginning we can point both pointers to first element of linked list. Then we can start a loop in which we can move first pointer with speed 1.
+that is move one element at a time, and second pointer with speed 2 that is moving two elements at a time (second pointer will do second=second.next.next);
+
+Very useful for detecting cycle in linked list.
+
+2. We can use null pointer at beginning to deal with edge case scenarios.
+
+3. Floyd Cycle Algorithm-- for detecting cycle.
+
+4. To find intersection in linked list, we can subtract length of linked lists and skip few elements of bigger linked list and start with common length.
