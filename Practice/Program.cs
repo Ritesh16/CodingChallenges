@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using Practice.LinkedList;
-using Practice.LinkedList.Intersectionof2LinkedList;
+using Practice.LinkedList.ReverseLinkedList;
 
 namespace Practice
 {
@@ -26,19 +26,24 @@ namespace Practice
             node.next = new ListNode(2);
             node.next.next = new ListNode(3);
 
-            var intersection = new ListNode(4);
-            node.next.next.next = intersection;
+            //var intersection = new ListNode(4);
+            //node.next.next.next = intersection;
 
-            var node2 = new ListNode(1);
-            node2.next = new ListNode(2);
-            node2.next = intersection;
+            //var node2 = new ListNode(1);
+            //node2.next = new ListNode(2);
+            //node2.next = intersection;
 
-            intersection.next = new ListNode(5);
-            intersection.next.next = new ListNode(6);
+            //intersection.next = new ListNode(5);
+            //intersection.next.next = new ListNode(6);
             //d.next = node.next;
 
-            var output = ob.getIntersectionNode(node, node2);
-            Console.WriteLine(output.val);
+            var output = ob.ReverseList(node);
+            node = output;
+            while (node != null)
+            {
+                Console.WriteLine(node.val);
+                node = node.next;
+            }
         }
     }
 }
