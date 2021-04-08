@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using Practice.LinkedList;
-using Practice.LinkedList.ReverseLinkedList;
+using Practice.LinkedList.RemoveElements;
 
 namespace Practice
 {
@@ -22,22 +22,12 @@ namespace Practice
 
             //sw.Stop();
 
-            var node = new ListNode(1);
-            node.next = new ListNode(2);
-            node.next.next = new ListNode(3);
+            var node = new ListNode(7);
+            node.next = new ListNode(7);
+            node.next.next = new ListNode(7);
+            node.next.next = new ListNode(7);
 
-            //var intersection = new ListNode(4);
-            //node.next.next.next = intersection;
-
-            //var node2 = new ListNode(1);
-            //node2.next = new ListNode(2);
-            //node2.next = intersection;
-
-            //intersection.next = new ListNode(5);
-            //intersection.next.next = new ListNode(6);
-            //d.next = node.next;
-
-            var output = ob.ReverseList(node);
+            var output = ob.RemoveElements(node, 7);
             node = output;
             while (node != null)
             {
