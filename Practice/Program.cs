@@ -12,20 +12,33 @@ namespace Practice
         {
             CodeFile ob = new CodeFile();
             Node node = new Node(7);
-            node.next = new Node(13);
 
-            node.next.random = node;
+            Node node2 = new Node(13);
+            node.next = node2;
 
-            node.next.next = new Node(11);
+            Node node3 = new Node(11);
+            node2.next = node3;
+           
 
-            var node2 = new Node(10);
+            Node node4 = new Node(10);
+            node3.next = node4;
+            node4.random = node3;
 
-            node.next.next.next = node2;
+            Node node5 = new Node(1);
+            node4.next = node5;
+            node5.random = node;
 
-            node2.random = node.next.next;
+            node3.random = node5;
 
+            var output = ob.CopyRandomList(node);
 
-            var data = ob.CopyRandomList(node);
+            while (output != null)
+            {
+                Console.WriteLine(output.val);
+                output = output.next;
+            }
+
+          
         }
     }
 }
