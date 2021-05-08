@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using Practice.LinkedList;
-using Practice.LinkedList.CopyListwithRandomPointer;
+using Practice.StacksAndQueues.ShortestDistance;
 
 namespace Practice
 {
@@ -10,35 +10,42 @@ namespace Practice
     {
         static void Main(string[] args)
         {
-            CodeFile ob = new CodeFile();
-            Node node = new Node(7);
+            Node ob = new Node();
+            ob.Value = 1;
 
-            Node node2 = new Node(13);
-            node.next = node2;
+            Node ob1 = new Node();
+            ob1.Value = 2;
 
-            Node node3 = new Node(11);
-            node2.next = node3;
-           
+            Node ob2 = new Node();
+            ob2.Value = 3;
 
-            Node node4 = new Node(10);
-            node3.next = node4;
-            node4.random = node3;
+            Node ob3 = new Node();
+            ob3.Value = 4;
 
-            Node node5 = new Node(1);
-            node4.next = node5;
-            node5.random = node;
+            ob.Nodes = new Node[] { ob1, ob2, ob3 };
 
-            node3.random = node5;
+            Node ob4 = new Node();
+            ob4.Value = 5;
 
-            var output = ob.CopyRandomList(node);
+            ob1.Nodes = new Node[] { ob4 };
 
-            while (output != null)
-            {
-                Console.WriteLine(output.val);
-                output = output.next;
-            }
+            Node ob5 = new Node();
+            ob5.Value = 6;
 
-          
+            Node ob6 = new Node();
+            ob6.Value = 7;
+
+
+            ob5.Nodes = new Node[] { ob6 };
+
+            ob2.Nodes = new Node[] { ob5 };
+
+            ob3.Nodes = new Node[] { ob6 };
+
+            CodeFile obj = new CodeFile();
+            var i = obj.BFS(ob, ob6);
+
+            Console.WriteLine(i);
         }
     }
 }
