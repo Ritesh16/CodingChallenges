@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using Practice.LinkedList;
-using Practice.StacksAndQueues.ShortestDistance;
+using Practice.StacksAndQueues.NumberofIslands;
 
 namespace Practice
 {
@@ -10,42 +10,15 @@ namespace Practice
     {
         static void Main(string[] args)
         {
-            Node ob = new Node();
-            ob.Value = 1;
+            CodeFile_BFS ob = new CodeFile_BFS();
+            char[][] input = new char[4][];
+            input[0] = new char[5] { '1', '1', '0', '0', '0' };
+            input[1] = new char[5] { '1', '1', '0', '0', '0' };
+            input[2] = new char[5] { '0', '0', '1', '0', '0' };
+            input[3] = new char[5] { '0', '0', '0', '1', '1' };
 
-            Node ob1 = new Node();
-            ob1.Value = 2;
-
-            Node ob2 = new Node();
-            ob2.Value = 3;
-
-            Node ob3 = new Node();
-            ob3.Value = 4;
-
-            ob.Nodes = new Node[] { ob1, ob2, ob3 };
-
-            Node ob4 = new Node();
-            ob4.Value = 5;
-
-            ob1.Nodes = new Node[] { ob4 };
-
-            Node ob5 = new Node();
-            ob5.Value = 6;
-
-            Node ob6 = new Node();
-            ob6.Value = 7;
-
-
-            ob5.Nodes = new Node[] { ob6 };
-
-            ob2.Nodes = new Node[] { ob5 };
-
-            ob3.Nodes = new Node[] { ob6 };
-
-            CodeFile obj = new CodeFile();
-            var i = obj.BFS(ob, ob6);
-
-            Console.WriteLine(i);
+            var count = ob.numIslands(input);
+            Console.WriteLine(count);
         }
     }
 }
