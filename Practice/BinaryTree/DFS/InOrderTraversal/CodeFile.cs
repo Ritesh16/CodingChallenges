@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Practice.BinaryTree.DFS.InOrderTraversal
+{
+    public class CodeFile
+    {
+        public IList<int> InorderTraversal(TreeNode root)
+        {
+            var output = new List<int>();
+            var stack = new Stack<TreeNode>();
+            if (root == null)
+            {
+                return output;
+            }
+
+            var node = root;
+            while (node != null || stack.Count != 0)
+            {
+                while (node != null)
+                {
+                    stack.Push(node);
+                    node = node.left;
+                }
+
+                node = stack.Pop();
+                output.Add(node.val);
+                node = node.right;
+            }
+
+            return output;
+        }
+    }
+}
