@@ -8,29 +8,46 @@ namespace Practice.BinaryTree.DFS.PreOrderTraversal
     {
         public IList<int> PreorderTraversal(TreeNode root)
         {
-            var output = new List<int>();
+            //var output = new List<int>();
+            //var stack = new Stack<TreeNode>();
+            //if (root == null)
+            //{
+            //    return output;
+            //}
+
+            //stack.Push(root);
+
+            //while (stack.Count > 0)
+            //{
+            //    var node = stack.Pop();
+            //    if (node.right != null)
+            //    {
+            //        stack.Push(node.right);
+            //    }
+
+            //    if (node.left != null)
+            //    {
+            //        stack.Push(node.left);
+            //    }
+
+            //    output.Add(node.val);
+            //}
+
+            //return output;
+
             var stack = new Stack<TreeNode>();
-            if (root == null)
-            {
-                return output;
-            }
+            var output = new List<int>();
 
             stack.Push(root);
-
             while (stack.Count > 0)
             {
                 var node = stack.Pop();
-                if (node.right != null)
+                if (node != null)
                 {
+                    output.Add(node.val);
                     stack.Push(node.right);
-                }
-
-                if (node.left != null)
-                {
                     stack.Push(node.left);
                 }
-
-                output.Add(node.val);
             }
 
             return output;
