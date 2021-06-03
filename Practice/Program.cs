@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using Practice.LinkedList;
-using Practice.LinkedList.MiddleOfLinkedList;
+using Practice.Maths.CalculateMoneyinBank;
 //using Practice.StacksAndQueues.NumberofIslands;
 
 namespace Practice
@@ -21,14 +21,15 @@ namespace Practice
             //var count = ob.NumIslands(input);
             //Console.WriteLine(count);
 
-            ListNode node = new ListNode(1);
-            node.next = new ListNode(2);
-            node.next.next = new ListNode(3);
+            //ListNode node = new ListNode(1);
+            //node.next = new ListNode(2);
+            //node.next.next = new ListNode(3);
 
-            CodeFile_Pointers ob = new CodeFile_Pointers();
-            var n = ob.MiddleNode(node);
-
-            Console.WriteLine(n.val);
+            //CodeFile_Pointers ob = new CodeFile_Pointers();
+            //var n = ob.MiddleNode(node);
+            CodeFile ob = new CodeFile();
+            var n = ob.TotalMoney(20);
+            Console.WriteLine(n);
         }
     }
 }
