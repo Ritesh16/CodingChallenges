@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Practice.LinkedList;
-using Practice.Maths.CalculateMoneyinBank;
+using Practice.BinaryTree.ConstructFromInorderPostOrder;
 //using Practice.StacksAndQueues.NumberofIslands;
 
 namespace Practice
@@ -28,8 +27,11 @@ namespace Practice
             //CodeFile_Pointers ob = new CodeFile_Pointers();
             //var n = ob.MiddleNode(node);
             CodeFile ob = new CodeFile();
-            var n = ob.TotalMoney(20);
-            Console.WriteLine(n);
+            var inOrder = new int[] { 9, 3, 15, 20, 7 };
+            var postOrder = new int[] { 9, 15, 7, 20, 3 };
+
+            var n = ob.BuildTree(inOrder, postOrder);
+            //Console.WriteLine(n);
         }
     }
 }
