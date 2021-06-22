@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "vXZfPITtrHzm7jQZCuY3xR0bsm2ZKRudG1h9BA1b63jjvp9KjLo0oO95hlInXOC990D3eqrNdiQGKr5vkU01Pg==",
+  "success": true,
+  "projectFilePath": "D:\\Apps\\Challenges\\Practice\\Practice.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rites\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
+  ],
+  "logs": []
+}
