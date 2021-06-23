@@ -15,7 +15,7 @@ namespace Practice.Recurssion.SearchBinaryTree
 
             return root;
         }
-        public TreeNode SearchBST(TreeNode root, int val)
+        public TreeNode SearchBST1(TreeNode root, int val)
         {
             if (root == null)
             {
