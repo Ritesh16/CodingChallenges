@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Practice.BinaryTree.ConstructFromInorderPostOrder;
+using Practice.Recurssion.UniqueBinarySearchTrees;
 //using Practice.StacksAndQueues.NumberofIslands;
 
 namespace Practice
@@ -27,10 +27,20 @@ namespace Practice
             //CodeFile_Pointers ob = new CodeFile_Pointers();
             //var n = ob.MiddleNode(node);
             CodeFile ob = new CodeFile();
-            var inOrder = new int[] { 9, 3, 15, 20, 7 };
-            var postOrder = new int[] { 9, 15, 7, 20, 3 };
+            var result = ob.NumTrees(5);
 
-            var n = ob.BuildTree(inOrder, postOrder);
+            CodeFile_Recurssion obr = new CodeFile_Recurssion();
+            var r1 = obr.NumTrees(5);
+            if (r1 == result)
+            {
+                Console.WriteLine("Match");
+            }
+            else
+            {
+                Console.WriteLine($"First:{result}, Second:{r1}");
+            }
+
+            Console.ReadLine();
             //Console.WriteLine(n);
         }
     }
