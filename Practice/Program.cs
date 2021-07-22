@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Practice.Strings.LongestCommonPrefix;
+using Practice.Arrays.TwoSumII;
 //using Practice.StacksAndQueues.NumberofIslands;
 
 namespace Practice
@@ -11,10 +11,16 @@ namespace Practice
         static void Main(string[] args)
         {
 
-            CodeFile_VerticalScan ob = new CodeFile_VerticalScan();
-            var input = new string[] { "ab", "a" };
+            var ob = new CodeFile_TwoPointer();
+            var input = new int[] { 2 ,3,4 };
 
-            var result = ob.LongestCommonPrefix(input);
+            var result = ob.TwoSum(input, 6);
+
+            foreach (var item in result)
+            {
+                Console.WriteLine(item);
+
+            }
             Console.WriteLine(result);
 
             Console.ReadLine();
