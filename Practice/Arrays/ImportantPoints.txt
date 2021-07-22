@@ -1,6 +1,7 @@
-﻿1. Arrays can be sorted to solve a problem. But remember, sorting arrays itself require complexity of O(logn). So it cannot be sorted for all solutions.
-2. 2-pointer technique. In this technique, we can read arrays using 2 pointers. It is really good technique, where we can maintain one regular pointer and then 
-second pointer either in reverse or in any where in middle of array.
+﻿1. Arrays can be sorted to solve a problem. But remember, sorting arrays itself require complexity of O(logn).
+So it cannot be sorted for all solutions.
+2. 2-pointer technique. In this technique, we can read arrays using 2 pointers. It is really good technique, 
+where we can maintain one regular pointer and then second pointer either in reverse or in any where in middle of array.
 3. 1-pass and 2-pass technique in array
 4. Even in some cases we can have 3-pointers. Like solving problem of MErge sorted arrays.
 
