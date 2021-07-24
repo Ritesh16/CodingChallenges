@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Arrays\DistinctNumbersinEachSubarray-SlidingWindow\" />
     <Folder Include="BFS\NewFolder\" />
   </ItemGroup>
 

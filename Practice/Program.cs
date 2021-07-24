@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Practice.Strings.ReverseWordsinString;
+using System.Linq;
+using Practice.Arrays.ConcatenationofArray;
 
 namespace Practice
 {
@@ -9,17 +10,16 @@ namespace Practice
     {
         static void Main(string[] args)
         {
+            var ob = new CodeFile();
+            var input = new int[] { 1, 3, 2, 1 };
 
-            var ob = new CodeFile_UsingStack();
-            var input = new int[] { 2 ,3,4 };
+            var result = ob.GetConcatenation(input);
 
-            var result = ob.ReverseWords("  Bob    Loves  Alice   ");
+            foreach (var item in result)
+            {
+                Console.WriteLine(item);
 
-            //foreach (var item in result)
-            //{
-            //    Console.WriteLine(item);
-
-            //}
+            }
             Console.WriteLine(result);
 
             Console.ReadLine();
