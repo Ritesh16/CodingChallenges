@@ -9,24 +9,27 @@ namespace Practice.StacksAndQueues.TargetSum
         int count = 0;
         public int FindTargetSumWays(int[] nums, int target)
         {
-            TargetSums(nums, target, 0, 0);
+            TargetSum(nums, target, 0, 0);
             return count;
         }
 
-        public void TargetSums(int[] nums, int target, int index, int sum)
+
+        public void TargetSum(int[] nums, int target, int sum, int index)
         {
-            if (index == nums.Length)
+            if (index== nums.Length)
             {
-                if (sum == target)
+                if (target == sum)
                 {
                     count++;
                 }
             }
             else
             {
-                TargetSums(nums, target, index + 1, sum + nums[index]);
-                TargetSums(nums, target, index + 1, sum - nums[index]);
+                Console.WriteLine($"Sum : {sum}, Index : {index}");
+                TargetSum(nums, target, sum + nums[index], index + 1);
+                TargetSum(nums, target, sum - nums[index], index + 1);
             }
         }
+        
     }
 }

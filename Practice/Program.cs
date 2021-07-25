@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using Practice.Arrays.ConcatenationofArray;
+using Practice.Arrays.TruncateSentence;
 
 namespace Practice
 {
@@ -11,15 +11,15 @@ namespace Practice
         static void Main(string[] args)
         {
             var ob = new CodeFile();
-            var input = new int[] { 1, 3, 2, 1 };
+            var input = new int[] { 0, 2, 1, 5, 3, 4 };
 
-            var result = ob.GetConcatenation(input);
+            var result = ob.TruncateSentence("chopper is not a tanuki", 5);
 
-            foreach (var item in result)
-            {
-                Console.WriteLine(item);
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
 
-            }
+            //}
             Console.WriteLine(result);
 
             Console.ReadLine();
