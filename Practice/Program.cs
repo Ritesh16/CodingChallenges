@@ -10,7 +10,7 @@ namespace Practice
     {
         static void Main(string[] args)
         {
-            var ob = new CodeFile();
+            var ob = new CodeFile_InBuilt();
             var input = new int[] { 0, 2, 1, 5, 3, 4 };
 
             var result = ob.TruncateSentence("chopper is not a tanuki", 5);
