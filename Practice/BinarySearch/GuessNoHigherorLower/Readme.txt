@@ -35,3 +35,13 @@ Constraints:
 
 1 <= n <= 231 - 1
 1 <= pick <= n
+
+0 ~ 6 months6 months ~ 1 year1 year ~ 2 years
+
+Google
+|
+3
+
+Apple
+|
+2
