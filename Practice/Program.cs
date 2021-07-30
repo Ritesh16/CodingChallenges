@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using Practice.Arrays.TruncateSentence;
+using Practice.BinarySearch.FindPeakElement;
 
 namespace Practice
 {
@@ -10,10 +10,10 @@ namespace Practice
     {
         static void Main(string[] args)
         {
-            var ob = new CodeFile_InBuilt();
-            var input = new int[] { 0, 2, 1, 5, 3, 4 };
+            var ob = new CodeFile_BinarySearch_Iterative();
+            var input = new int[] { 1, 2, 3, 1 };
 
-            var result = ob.TruncateSentence("chopper is not a tanuki", 5);
+            var result = ob.FindPeakElement(input);
 
             //foreach (var item in result)
             //{

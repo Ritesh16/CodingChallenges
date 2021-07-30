@@ -41,7 +41,7 @@ namespace Practice.Arrays.UniqueEmailAddresses
                 }
             }
 
-            return hashSet.Count();
+            return hashSet.Count;
         }
     }
 }
