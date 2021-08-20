@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Practice.BinarySearchTree.ValidateBinarySearchTree
+namespace Practice.BinarySearchTree
 {
     public class TreeNode
     {
