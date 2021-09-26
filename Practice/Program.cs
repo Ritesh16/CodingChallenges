@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using Practice.Trie.DesignSearchAutoComplete;
+using Practice.Trie.AddAndSearchWord;
 
 namespace Practice
 {
@@ -10,21 +10,15 @@ namespace Practice
     {
         static void Main(string[] args)
         {
-            var list=new List<string>();
-            list.Add("i love you");
-            list.Add("island");
-            list.Add("iroman");
-            list.Add("i love leetcode");
-            var ob = new AutocompleteSystem(list.ToArray(), new int[] { 5,3,2,2 });
-            var input = new int[] { 1, 2, 3, 1 };
+            var ob = new WordDictionary();
 
-            var o1 = ob.Input('i');
-            var o2 = ob.Input(' ');
-            var o3 = ob.Input('a');
-            var o4 = ob.Input('#');
-            var o5 = ob.Input('i');
-            var o6 = ob.Input(' ');
-            var o7 = ob.Input('a');
+            ob.AddWord("a");
+            ob.AddWord("a");
+
+            var res1 = ob.Search(".");
+            var res2 = ob.Search("a");
+            var res3 = ob.Search(".a");
+            var res4 = ob.Search("a.");
 
             //foreach (var item in result)
             //{
