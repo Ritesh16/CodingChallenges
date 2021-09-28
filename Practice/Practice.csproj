@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="BFS\NewFolder\" />
+    <Folder Include="Recurssion\Algorithms\DivideAndConquer\" />
   </ItemGroup>
 
 </Project>
