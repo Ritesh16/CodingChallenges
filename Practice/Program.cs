@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using Practice.Trie.AddAndSearchWord;
+using Practice.Recurssion.Algorithms.DivideAndConquer.MergeSort;
 
 namespace Practice
 {
@@ -10,21 +10,16 @@ namespace Practice
     {
         static void Main(string[] args)
         {
-            var ob = new WordDictionary();
+            var ob = new CodeFile();
+            var input = new int[] { 99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0 };
+            var result = ob.SortArray(input);
 
-            ob.AddWord("a");
-            ob.AddWord("a");
 
-            var res1 = ob.Search(".");
-            var res2 = ob.Search("a");
-            var res3 = ob.Search(".a");
-            var res4 = ob.Search("a.");
+            foreach (var item in result)
+            {
+                Console.WriteLine(item);
 
-            //foreach (var item in result)
-            //{
-            //    Console.WriteLine(item);
-
-            //}
+            }
 
             Console.ReadLine();
         }
