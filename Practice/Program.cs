@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using Practice.HashTables.LongestSubstringWith2DistinctChar;
+using Practice.Strings.ReverseWordsinStringII;
 
 namespace Practice
 {
@@ -23,8 +23,8 @@ namespace Practice
             //Console.WriteLine(logger.ShouldPrintMessage(11, "A"));
 
             var ob = new CodeFile();
-            var output = ob.LengthOfLongestSubstringTwoDistinct("eceba");
-            Console.WriteLine(output);
+            char[] s = new char[] { 't', 'h', 'e', ' ', 's', 'k', 'y', ' ', 'i', 's', ' ', 'b', 'l', 'u', 'e' };
+            ob.ReverseWords(s);
             Console.ReadLine();
         }
     }
