@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using Practice.Strings.ReverseWordsinStringII;
+using Practice.HashTables.ShortestWordDistance;
 
 namespace Practice
 {
@@ -22,9 +22,14 @@ namespace Practice
             //Console.WriteLine(logger.ShouldPrintMessage(11, "C"));
             //Console.WriteLine(logger.ShouldPrintMessage(11, "A"));
 
-            var ob = new CodeFile();
-            char[] s = new char[] { 't', 'h', 'e', ' ', 's', 'k', 'y', ' ', 'i', 's', ' ', 'b', 'l', 'u', 'e' };
-            ob.ReverseWords(s);
+            var array = new string[] { "practice", "makes", "perfect", "coding", "makes" };
+            var ob = new WordDistance(array);
+
+            var min = ob.Shortest("coding", "practice");
+            Console.WriteLine(min);
+            
+            min = ob.Shortest("makes", "coding");
+            Console.WriteLine(min);
             Console.ReadLine();
         }
     }
