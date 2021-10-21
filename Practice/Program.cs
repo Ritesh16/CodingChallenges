@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using Practice.HashTables.ShortestWordDistance;
+using Practice.HashTables.ShortestWordDistancelll;
 
 namespace Practice
 {
@@ -22,14 +22,12 @@ namespace Practice
             //Console.WriteLine(logger.ShouldPrintMessage(11, "C"));
             //Console.WriteLine(logger.ShouldPrintMessage(11, "A"));
 
-            var array = new string[] { "practice", "makes", "perfect", "coding", "makes" };
-            var ob = new WordDistance(array);
+            var array = new string[] { "this", "is", "a", "long", "sentence", "is", "fun", "day", "today", "sunny", "weather", "is", "a", "day", "tuesday", "this", "sentence", "run", "running", "rainy" };
+            var ob = new CodeFile();
 
-            var min = ob.Shortest("coding", "practice");
+            var min = ob.ShortestWordDistance(array, "is", "is");
             Console.WriteLine(min);
-            
-            min = ob.Shortest("makes", "coding");
-            Console.WriteLine(min);
+
             Console.ReadLine();
         }
     }
