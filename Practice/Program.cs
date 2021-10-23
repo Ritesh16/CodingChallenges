@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using Practice.HashTables.ShortestWordDistancelll;
+using Practice.HashTables.StrobogrammaticNumberII;
 
 namespace Practice
 {
@@ -25,8 +25,12 @@ namespace Practice
             var array = new string[] { "this", "is", "a", "long", "sentence", "is", "fun", "day", "today", "sunny", "weather", "is", "a", "day", "tuesday", "this", "sentence", "run", "running", "rainy" };
             var ob = new CodeFile();
 
-            var min = ob.ShortestWordDistance(array, "is", "is");
-            Console.WriteLine(min);
+            var list = ob.FindStrobogrammatic(4);
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
+            
 
             Console.ReadLine();
         }
