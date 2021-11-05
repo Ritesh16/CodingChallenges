@@ -8,6 +8,7 @@
   <ItemGroup>
     <Folder Include="SQL\CountStudentNumberinDepartments\" />
     <Folder Include="SQL\CustomersWhoBoughtAllProducts\" />
+    <Folder Include="SQL\GamePlayAnalysisIII\" />
     <Folder Include="SQL\ProjectEmployeeslll\" />
     <Folder Include="SQL\TreeNode\" />
   </ItemGroup>
