@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using Practice.HashTables.StrobogrammaticNumberII;
+using Practice.HashTables.UniqueMorseCodeWords;
 
 namespace Practice
 {
@@ -22,14 +22,11 @@ namespace Practice
             //Console.WriteLine(logger.ShouldPrintMessage(11, "C"));
             //Console.WriteLine(logger.ShouldPrintMessage(11, "A"));
 
-            var array = new string[] { "this", "is", "a", "long", "sentence", "is", "fun", "day", "today", "sunny", "weather", "is", "a", "day", "tuesday", "this", "sentence", "run", "running", "rainy" };
+            var array = new string[] { "a" };
             var ob = new CodeFile();
 
-            var list = ob.FindStrobogrammatic(4);
-            foreach (var item in list)
-            {
-                Console.WriteLine(item);
-            }
+            var list = ob.UniqueMorseRepresentations(array);
+            Console.Write(list);
             
 
             Console.ReadLine();
