@@ -1,6 +1,7 @@
 ﻿Two-pointer Technique - Scenario I
-In the previous chapter, we solve some problems by iterating the array. Typically, we only use one pointer starting from the first element and 
-ending at the last one to do iteration. However, sometimes, we might need to use two pointers at the same time to do the iteration.
+In the previous chapter, we solve some problems by iterating the array. Typically, we only use one pointer starting from the first 
+element and ending at the last one to do iteration. However, sometimes, we might need to use two pointers at the same time to do 
+the iteration.
 
 
 An Example
@@ -8,10 +9,11 @@ Let's start with a classic problem:
 
 Reverse the elements in an array.
 
-The idea is to swap the first element with the end, advance to the next element and swapping repeatedly until it reaches the middle position. 
+The idea is to swap the first element with the end, advance to the next element and swapping repeatedly until it reaches the middle 
+position. 
 
-We can use two pointers at the same time to do the iteration: one starts from the first element and another starts from the last element. 
-Continue swapping the elements until the two pointers meet each other.
+We can use two pointers at the same time to do the iteration: one starts from the first element and another starts from the last 
+element. Continue swapping the elements until the two pointers meet each other.
 
 Here is the code for your reference:
 public static void reverse(int[] v, int N) {
