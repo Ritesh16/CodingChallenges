@@ -1,14 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Practice.Arrays.BestTimetoBuyandSellStock
+﻿namespace Practice.Arrays.BestTimetoBuyandSellStock
 {
     public class CodeFile
     {
         public int MaxProfit(int[] prices)
         {
-            return 0;
+            var minPrice = int.MaxValue;
+            var maxProfit = 0;
+            for (int i = 0; i < prices.Length; i++)
+            {
+                if (prices[i] < minPrice)
+                {
+                    minPrice = prices[i];
+                }
+                else if (prices[i] - minPrice > maxProfit)
+                {
+                    maxProfit = prices[i] - minPrice;
+                }
+            }
+
+            return maxProfit;
         }
     }
 }
