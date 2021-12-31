@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using Practice.HashTables.UniqueMorseCodeWords;
+using Practice.LinkedList.DesignHashSet;
 
 namespace Practice
 {
@@ -22,12 +22,19 @@ namespace Practice
             //Console.WriteLine(logger.ShouldPrintMessage(11, "C"));
             //Console.WriteLine(logger.ShouldPrintMessage(11, "A"));
 
-            var array = new string[] { "a" };
-            var ob = new CodeFile();
+            var ob = new MyHashSet();
+            ob.Add(1);
+            ob.Add(2);
 
-            var list = ob.UniqueMorseRepresentations(array);
-            Console.Write(list);
-            
+            Console.WriteLine(ob.Contains(2));
+            ob.Remove(2);
+            Console.WriteLine(ob.Contains(2));
+
+            ob.Add(3);
+            Console.WriteLine(ob.Contains(1));
+            Console.WriteLine(ob.Contains(2));
+            Console.WriteLine(ob.Contains(3));
+
 
             Console.ReadLine();
         }
