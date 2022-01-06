@@ -1,0 +1,26 @@
+WITH NumberSeries AS
+(
+	SELECT 1 AS MyNumber
+
+	UNION ALL
+
+	SELECT MyNumber+2 FROM NumberSeries
+	WHERE MyNumber < 99
+)
+
+
+SELECT * FROM NumberSeries 
+
+WITH DateSeries AS
+(
+	SELECT CAST('01-01-2021' as DATE) AS MyDate
+
+	UNION ALL
+
+	SELECT DATEADD(MONTH,1, MyDate) FROM DateSeries
+	WHERE MyDate < CAST('12-01-2029' as DATE)
+)
+
+
+SELECT * FROM DateSeries 
+OPTION(MAXRECURSION 365)
