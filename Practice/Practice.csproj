@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="SQL\Advance Queries\SubQueries\Scalar\" />
     <Folder Include="SQL\CountStudentNumberinDepartments\" />
     <Folder Include="SQL\CustomersWhoBoughtAllProducts\" />
     <Folder Include="SQL\GamePlayAnalysisIII\" />
