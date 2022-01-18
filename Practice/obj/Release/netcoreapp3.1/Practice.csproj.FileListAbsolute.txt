@@ -1,0 +1,14 @@
+D:\Apps\Challenges\Practice\bin\Release\netcoreapp3.1\Practice.exe
+D:\Apps\Challenges\Practice\bin\Release\netcoreapp3.1\Practice.deps.json
+D:\Apps\Challenges\Practice\bin\Release\netcoreapp3.1\Practice.runtimeconfig.json
+D:\Apps\Challenges\Practice\bin\Release\netcoreapp3.1\Practice.runtimeconfig.dev.json
+D:\Apps\Challenges\Practice\bin\Release\netcoreapp3.1\Practice.dll
+D:\Apps\Challenges\Practice\bin\Release\netcoreapp3.1\Practice.pdb
+D:\Apps\Challenges\Practice\obj\Release\netcoreapp3.1\Practice.csproj.AssemblyReference.cache
+D:\Apps\Challenges\Practice\obj\Release\netcoreapp3.1\Practice.GeneratedMSBuildEditorConfig.editorconfig
+D:\Apps\Challenges\Practice\obj\Release\netcoreapp3.1\Practice.AssemblyInfoInputs.cache
+D:\Apps\Challenges\Practice\obj\Release\netcoreapp3.1\Practice.AssemblyInfo.cs
+D:\Apps\Challenges\Practice\obj\Release\netcoreapp3.1\Practice.csproj.CoreCompileInputs.cache
+D:\Apps\Challenges\Practice\obj\Release\netcoreapp3.1\Practice.dll
+D:\Apps\Challenges\Practice\obj\Release\netcoreapp3.1\Practice.pdb
+D:\Apps\Challenges\Practice\obj\Release\netcoreapp3.1\Practice.genruntimeconfig.cache

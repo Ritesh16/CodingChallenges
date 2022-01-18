@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using Practice.LinkedList.DesignHashSet;
+using Practice.LinkedList;
+using Practice.LinkedList.DeleteMiddleNode;
 
 namespace Practice
 {
@@ -22,21 +23,51 @@ namespace Practice
             //Console.WriteLine(logger.ShouldPrintMessage(11, "C"));
             //Console.WriteLine(logger.ShouldPrintMessage(11, "A"));
 
-            var ob = new MyHashSet();
-            ob.Add(1);
-            ob.Add(2);
+            //var ob = new MyHashSet();
+            //ob.Add(1);
+            //ob.Add(2);
 
-            Console.WriteLine(ob.Contains(2));
-            ob.Remove(2);
-            Console.WriteLine(ob.Contains(2));
+            //Console.WriteLine(ob.Contains(2));
+            //ob.Remove(2);
+            //Console.WriteLine(ob.Contains(2));
 
-            ob.Add(3);
-            Console.WriteLine(ob.Contains(1));
-            Console.WriteLine(ob.Contains(2));
-            Console.WriteLine(ob.Contains(3));
+            //ob.Add(3);
+            //Console.WriteLine(ob.Contains(1));
+            //Console.WriteLine(ob.Contains(2));
+            //Console.WriteLine(ob.Contains(3));
+
+            ListNode node = new ListNode(1);
+            node.next = new ListNode(3);
+            node.next.next = new ListNode(4);
+
+            ListNode node1 = new ListNode(7);
+            node1.next = new ListNode(1);
+            node1.next.next = new ListNode(2);
+            node1.next.next.next = new ListNode(6);
+
+            node.next.next.next = node1;
+
+            //ListNode node = new ListNode(1);
+            //node.next = new ListNode(2);
+            //node.next.next = new ListNode(3);
+
+            //ListNode node1 = new ListNode(4);
+            ////node1.next = new ListNode(1);
+            ////node1.next.next = new ListNode(2);
+            ////node1.next.next.next = new ListNode(6);
+
+            //node.next.next.next = node1;
 
 
-            Console.ReadLine();
+            CodeFile ob = new CodeFile();
+            var output = ob.DeleteMiddle(node);
+
+            while (output != null)
+            {
+                Console.WriteLine(output.val);
+                output = output.next;   
+            }
+
         }
     }
 }
