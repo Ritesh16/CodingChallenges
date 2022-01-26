@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using Practice.LinkedList;
+using Practice.StacksAndQueues.CircularQueue;
 using Practice.LinkedList.DeleteMiddleNode;
 
 namespace Practice
@@ -36,16 +36,16 @@ namespace Practice
             //Console.WriteLine(ob.Contains(2));
             //Console.WriteLine(ob.Contains(3));
 
-            ListNode node = new ListNode(1);
-            node.next = new ListNode(3);
-            node.next.next = new ListNode(4);
+            //ListNode node = new ListNode(1);
+            //node.next = new ListNode(3);
+            //node.next.next = new ListNode(4);
 
-            ListNode node1 = new ListNode(7);
-            node1.next = new ListNode(1);
-            node1.next.next = new ListNode(2);
-            node1.next.next.next = new ListNode(6);
+            //ListNode node1 = new ListNode(7);
+            //node1.next = new ListNode(1);
+            //node1.next.next = new ListNode(2);
+            //node1.next.next.next = new ListNode(6);
 
-            node.next.next.next = node1;
+            //node.next.next.next = node1;
 
             //ListNode node = new ListNode(1);
             //node.next = new ListNode(2);
@@ -59,14 +59,18 @@ namespace Practice
             //node.next.next.next = node1;
 
 
-            CodeFile ob = new CodeFile();
-            var output = ob.DeleteMiddle(node);
+            MyCircularQueue_I ob = new MyCircularQueue_I(5);
+            ob.EnQueue(1);
+            ob.EnQueue(2);
+            ob.DeQueue();
 
-            while (output != null)
-            {
-                Console.WriteLine(output.val);
-                output = output.next;   
-            }
+            var dd = ob.Front();
+
+            //while (output != null)
+            //{
+            //    Console.WriteLine(output.val);
+            //    output = output.next;   
+            //}
 
         }
     }
