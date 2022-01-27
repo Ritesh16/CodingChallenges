@@ -56,7 +56,11 @@ If you use several pointers, it will be better to give them suitable names in ca
 
 You are not able to trace back the previous node in a singly linked list. So you have to store not only the current node but also the previous node. This is different in a doubly linked list which we will cover in the later chapter.
 
+4. We can convert linked list into array in some situations.
+
+5. Where reverse of elements involved, we can use stacks.
 
 If you need to add or delete a node frequently, a linked list could be a good choice.
 
 If you need to access an element by index often, an array might be a better choice than a linked list.
+
