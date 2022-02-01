@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using Practice.StacksAndQueues.CircularQueue;
-using Practice.LinkedList.DeleteMiddleNode;
+using Practice.Arrays.FindFirstPalindromicString;
 
 namespace Practice
 {
@@ -59,13 +59,10 @@ namespace Practice
             //node.next.next.next = node1;
 
 
-            MyCircularQueue_I ob = new MyCircularQueue_I(5);
-            ob.EnQueue(1);
-            ob.EnQueue(2);
-            ob.DeQueue();
-
-            var dd = ob.Front();
-
+            CodeFile ob = new CodeFile();
+            var array = new string[] { "def", "ghi" };
+            var output = ob.FirstPalindrome(array);
+            Console.WriteLine(output);
             //while (output != null)
             //{
             //    Console.WriteLine(output.val);
