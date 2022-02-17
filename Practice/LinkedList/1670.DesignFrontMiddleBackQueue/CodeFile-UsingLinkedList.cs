@@ -11,13 +11,12 @@ namespace Practice.LinkedList._1670.DesignFrontMiddleBackQueue
         int count = 0;
         public FrontMiddleBackQueue()
         {
-            head = new ListNode();
+            head = new ListNode(0);
         }
 
         public void PushFront(int val)
         {
-            var node = new ListNode();
-            node.val = val;
+            var node = new ListNode(val);
 
             count++;
             if (count == 1)
@@ -59,8 +58,7 @@ namespace Practice.LinkedList._1670.DesignFrontMiddleBackQueue
 
         public void PushBack(int val)
         {
-            var node = new ListNode();
-            node.val = val;
+            var node = new ListNode(val);
 
             count++;
             if (count == 1)

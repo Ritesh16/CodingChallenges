@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using Practice.StacksAndQueues.CircularQueue;
-using Practice.Arrays.FindFirstPalindromicString;
+using Practice.Arrays._1913.MaxProductDiffBetween2Pairs;
 
 namespace Practice
 {
@@ -60,8 +60,8 @@ namespace Practice
 
 
             CodeFile ob = new CodeFile();
-            var array = new string[] { "def", "ghi" };
-            var output = ob.FirstPalindrome(array);
+            var array = new int[] { 4, 2, 5, 9, 7, 4, 8 };
+            var output = ob.MaxProductDifference(array);
             Console.WriteLine(output);
             //while (output != null)
             //{
