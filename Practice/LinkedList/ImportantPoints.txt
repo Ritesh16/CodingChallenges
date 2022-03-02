@@ -64,3 +64,6 @@ If you need to add or delete a node frequently, a linked list could be a good ch
 
 If you need to access an element by index often, an array might be a better choice than a linked list.
 
+6. If we need to create a list like HashMap, its good idea to take a number and find remainder 
+  incoming value with number. For eg. Design HashSet using linked list
+

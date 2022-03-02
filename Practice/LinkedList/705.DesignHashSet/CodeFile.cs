@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Practice.LinkedList.DesignHashSet
 {
-    public class MyHashSet
+    public class MyHashSet_Old
     {
         List<int>[] list;
         int count = 256;
-        public MyHashSet()
+        public MyHashSet_Old()
         {
             list = new List<int>[count];
         }
