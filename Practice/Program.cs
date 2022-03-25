@@ -9,8 +9,21 @@ namespace Practice
 {
     class Program
     {
+        private static readonly DateTime UnixEpoch = new DateTime(1970, 1, 1, 0, 0, 0,
+                                                          DateTimeKind.Utc);
+
+        public static DateTime FromMillisecondsSinceUnixEpoch(long milliseconds)
+        {
+            return UnixEpoch.AddSeconds(milliseconds);
+        }
         static void Main(string[] args)
         {
+            var number = 1648659600;
+            var date = FromMillisecondsSinceUnixEpoch(number);
+
+
+            Console.WriteLine(date);
+
             //var logger = new Logger();
             //Console.WriteLine(logger.ShouldPrintMessage(0, "A"));  // return true, next allowed timestamp for "foo" is 1 + 10 = 11
             //Console.WriteLine(logger.ShouldPrintMessage(0, "B"));  // return true, next allowed timestamp for "bar" is 2 + 10 = 12
