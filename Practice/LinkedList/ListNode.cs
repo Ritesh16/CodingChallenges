@@ -10,5 +10,10 @@
             val = x;
             next = null;
         }
+
+        public ListNode()
+        {
+
+        }
     }
 }
