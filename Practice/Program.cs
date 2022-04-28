@@ -3,26 +3,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using Practice.StacksAndQueues.CircularQueue;
-using Practice.Arrays._1913.MaxProductDiffBetween2Pairs;
+using Practice.Arrays._2206.DivideArrayInEqualPair;
 
 namespace Practice
 {
     class Program
     {
-        private static readonly DateTime UnixEpoch = new DateTime(1970, 1, 1, 0, 0, 0,
-                                                          DateTimeKind.Utc);
-
-        public static DateTime FromMillisecondsSinceUnixEpoch(long milliseconds)
-        {
-            return UnixEpoch.AddSeconds(milliseconds);
-        }
         static void Main(string[] args)
         {
-            var number = 1648659600;
-            var date = FromMillisecondsSinceUnixEpoch(number);
-
-
-            Console.WriteLine(date);
 
             //var logger = new Logger();
             //Console.WriteLine(logger.ShouldPrintMessage(0, "A"));  // return true, next allowed timestamp for "foo" is 1 + 10 = 11
@@ -73,8 +61,8 @@ namespace Practice
 
 
             CodeFile ob = new CodeFile();
-            var array = new int[] { 4, 2, 5, 9, 7, 4, 8 };
-            var output = ob.MaxProductDifference(array);
+            var array = new int[] { 3, 2, 3, 2, 2, 2 };
+            var output = ob.DivideArray(array);
             Console.WriteLine(output);
             //while (output != null)
             //{
