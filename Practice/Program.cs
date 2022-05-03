@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using Practice.StacksAndQueues.CircularQueue;
-using Practice.Arrays._2206.DivideArrayInEqualPair;
+using Practice.Recurssion.PascalTrianglell;
 
 namespace Practice
 {
@@ -62,7 +62,7 @@ namespace Practice
 
             CodeFile ob = new CodeFile();
             var array = new int[] { 3, 2, 3, 2, 2, 2 };
-            var output = ob.DivideArray(array);
+            var output = ob.GetRow(3);
             Console.WriteLine(output);
             //while (output != null)
             //{
