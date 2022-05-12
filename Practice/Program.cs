@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using Practice.StacksAndQueues.CircularQueue;
-using Practice.Recurssion.PascalTrianglell;
+using Practice.Sorting._1460.MakeTwoArraysEqualByReversing;
 
 namespace Practice
 {
@@ -61,8 +61,9 @@ namespace Practice
 
 
             CodeFile ob = new CodeFile();
-            var array = new int[] { 3, 2, 3, 2, 2, 2 };
-            var output = ob.GetRow(3);
+            var array = new int[] { 1,1,1,1,1 };
+            var array1 = new int[] { 1, 1, 1, 1, 1 };
+            var output = ob.CanBeEqual(array, array1);
             Console.WriteLine(output);
             //while (output != null)
             //{
