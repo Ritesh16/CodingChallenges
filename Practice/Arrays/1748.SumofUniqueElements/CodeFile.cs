@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Practice.Arrays._1748.SumofUniqueElements
@@ -9,21 +10,21 @@ namespace Practice.Arrays._1748.SumofUniqueElements
         public int SumOfUnique(int[] nums)
         {
             var result = 0;
-            var hashSet = new HashSet<int>();
+            var map = new Dictionary<int, int>();
 
             foreach (var item in nums)
             {
-                if (!hashSet.Contains(item))
+                if (map.ContainsKey(item))
                 {
-                    result += item;
+                    map[item]++;
                 }
-                else if(result > 0)
+                else
                 {
-                    result -= item;
+                    map.Add(item, 1);
                 }
-
-                hashSet.Add(item);
             }
+
+            result = map.Where(x => x.Value == 1).Select(x => x.Key).Sum();
 
             return result;
         }
