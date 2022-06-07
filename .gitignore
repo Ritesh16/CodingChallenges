@@ -2,5 +2,6 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/Practice/obj/Debug/netcoreapp3.1
+/Practice/obj/
 /.vs/Challenges/v16
+/Practice/bin/
