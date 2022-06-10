@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Practice.Algorithms.Sorting
+namespace Practice.Algorithms.Sorting.BubbleSort
 {
-    public class BubbleSort
+    public class CodeFile
     {
         public int[] Sort(int[] input)
         {
@@ -13,7 +13,7 @@ namespace Practice.Algorithms.Sorting
             {
                 for (int j = 0; j < input.Length - 1; j++)
                 {
-                    if(input[j] > input[j + 1])
+                    if (input[j] > input[j + 1])
                     {
                         temp = input[j + 1];
                         input[j + 1] = input[j];
@@ -22,7 +22,7 @@ namespace Practice.Algorithms.Sorting
                 }
             }
 
-            return input;  
+            return input;
         }
     }
 }
