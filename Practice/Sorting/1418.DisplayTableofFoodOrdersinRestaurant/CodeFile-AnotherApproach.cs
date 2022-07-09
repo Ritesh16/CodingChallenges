@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Practice.Sorting._1418.DisplayTableofFoodOrdersinRestaurant
 {
-    public class CodeFile_Fast
+    public class CodeFile_AnotherApproach
     {
         public IList<IList<string>> DisplayTable(IList<IList<string>> orders)
         {
