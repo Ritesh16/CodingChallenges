@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using Practice.StacksAndQueues.CircularQueue;
-using Practice.Sorting._1460.MakeTwoArraysEqualByReversing;
+using Practice.Strings._58.LengthOfLastWord;
 
 namespace Practice
 {
@@ -60,11 +60,14 @@ namespace Practice
             //node.next.next.next = node1;
 
 
-            CodeFile ob = new CodeFile();
-            var array = new int[] { 1,1,1,1,1 };
-            var array1 = new int[] { 1, 1, 1, 1, 1 };
-            var output = ob.CanBeEqual(array, array1);
+            CodeFile_Fast ob = new CodeFile_Fast();
+            var output = ob.LengthOfLastWord("luffy is still joyboy ");
             Console.WriteLine(output);
+            //foreach (var item in output)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            
             //while (output != null)
             //{
             //    Console.WriteLine(output.val);
