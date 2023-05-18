@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using Practice.StacksAndQueues.CircularQueue;
-using Practice.Strings._58.LengthOfLastWord;
+using Practice.Arrays._2418.SortthePeople;
 
 namespace Practice
 {
@@ -60,9 +60,17 @@ namespace Practice
             //node.next.next.next = node1;
 
 
-            CodeFile_Fast ob = new CodeFile_Fast();
-            var output = ob.LengthOfLastWord("luffy is still joyboy ");
-            Console.WriteLine(output);
+            CodeFile ob = new CodeFile();
+
+            var names = new string[3] { "Alice", "Bob", "Bob1"};
+            var heights = new int[3] { 155, 185, 150 };
+            var output = ob.SortPeople(names, heights);
+
+            foreach (var item in output)
+            {
+                Console.WriteLine(item);
+            }
+
             //foreach (var item in output)
             //{
             //    Console.WriteLine(item);
