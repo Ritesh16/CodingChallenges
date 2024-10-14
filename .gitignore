@@ -3,5 +3,8 @@
 ################################################################################
 
 /Practice/obj/
-/.vs/Challenges/v16
+.vs/
 /Practice/bin/
+obj/
+/Recursion/bin/
+/Recursion/obj/
