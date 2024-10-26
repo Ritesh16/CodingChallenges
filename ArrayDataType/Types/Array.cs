@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ArrayDataType.Search;
+using ArrayDataType.Types.Interfaces;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ArrayDataType.Types
 {
-    public class Array : IEnumerable<int>
+    public class Array : IEnumerable<int>, IArray
     {
         public int Length { get; set; }
 
@@ -36,7 +38,6 @@ namespace ArrayDataType.Types
                 _data[index] = value;
             }
         }
-
         public void Add(int value)
         {
             if (Length == _size)
@@ -48,7 +49,6 @@ namespace ArrayDataType.Types
             _index++;
             Length = _index;
         }
-
         public void Insert(int index, int value)
         {
             if (index > Length)
@@ -65,7 +65,6 @@ namespace ArrayDataType.Types
 
             Length++;
         }
-
         public void Delete(int index)
         {
             if (index > Length)
@@ -80,7 +79,19 @@ namespace ArrayDataType.Types
 
             Length--;
         }
-
+        public int Search(int value)
+        {
+            if(_data.Length <= 20)
+            {
+                var linearSearch = new Linear();
+                return linearSearch.Search(_data, Length, value);
+            }
+            else
+            {
+                var binarySearch = new Binary();
+                return binarySearch.Search(_data, Length, value);
+            }
+        }
         public IEnumerator<int> GetEnumerator()
         {
             for (var i = 0; i < Length; i++)
@@ -89,6 +100,8 @@ namespace ArrayDataType.Types
             }
         }
 
+
+        // Private methods
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();

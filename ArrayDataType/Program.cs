@@ -16,32 +16,35 @@ array.Add(10);
 array.Add(11);
 array.Add(12);
 
-Console.WriteLine("Items in array:");
-foreach (var item in array)
-{
-    Console.WriteLine(item);
-}
+//Console.WriteLine("Items in array:");
+//foreach (var item in array)
+//{
+//    Console.WriteLine(item);
+//}
 
-Console.WriteLine("******************************");
+//Console.WriteLine("******************************");
 
-array.Insert(0, 100);
+//array.Insert(0, 100);
 
-Console.WriteLine("Items in array after insert:");
+//Console.WriteLine("Items in array after insert:");
 
-for (var i = 0; i< array.Length; i++)
-{
-    Console.WriteLine(array[i]);
-}
+//for (var i = 0; i< array.Length; i++)
+//{
+//    Console.WriteLine(array[i]);
+//}
 
-Console.WriteLine($"Length : {array.Length}");
-Console.WriteLine("******************************");
+//Console.WriteLine($"Length : {array.Length}");
+//Console.WriteLine("******************************");
 
-array.Delete(50);
-Console.WriteLine("Items in array after delete:");
-for (var i = 0; i < array.Length; i++)
-{
-    Console.WriteLine(array[i]);
-}
+//array.Delete(50);
+//Console.WriteLine("Items in array after delete:");
+//for (var i = 0; i < array.Length; i++)
+//{
+//    Console.WriteLine(array[i]);
+//}
 
-Console.WriteLine($"Length : {array.Length}");
-Console.WriteLine("******************************");
+//Console.WriteLine($"Length : {array.Length}");
+//Console.WriteLine("******************************");
+var output = array.Search(11);
+
+Console.WriteLine(output);
