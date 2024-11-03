@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ArrayDataType.Types.Interfaces
+﻿namespace ArrayDataType.Types.Interfaces
 {
     public interface IArray
     {
@@ -12,5 +6,12 @@ namespace ArrayDataType.Types.Interfaces
         void Insert(int index, int value);
         void Delete(int index);
         int Search(int value);
+        int Max();
+        int Min();
+        double Avg();
+        int Sum();
+        int[] Reverse(bool newMemory);
+        int[] LeftShift();
+        int[] RightShift();
     }
 }

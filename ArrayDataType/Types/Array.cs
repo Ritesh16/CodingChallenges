@@ -1,4 +1,5 @@
-﻿using ArrayDataType.Search;
+﻿using ArrayDataType.Reverse;
+using ArrayDataType.Search;
 using ArrayDataType.Types.Interfaces;
 using System;
 using System.Collections;
@@ -21,7 +22,6 @@ namespace ArrayDataType.Types
             Length = 0;
             _data = new int[_size];
         }
-
         public int this[int index]
         {
             get
@@ -81,7 +81,7 @@ namespace ArrayDataType.Types
         }
         public int Search(int value)
         {
-            if(_data.Length <= 20)
+            if (_data.Length <= 20)
             {
                 var linearSearch = new Linear();
                 return linearSearch.Search(_data, Length, value);
@@ -91,6 +91,77 @@ namespace ArrayDataType.Types
                 var binarySearch = new Binary();
                 return binarySearch.Search(_data, Length, value);
             }
+        }
+        public int Max()
+        {
+            var max = int.MinValue;
+            for (int i = 0; i < Length; i++)
+            {
+                if (_data[i] > max)
+                    max = _data[i];
+            }
+
+            return max;
+        }
+        public int Min()
+        {
+            var max = int.MaxValue;
+            for (int i = 0; i < Length; i++)
+            {
+                if (_data[i] < max)
+                    max = _data[i];
+            }
+
+            return max;
+        }
+        public double Avg()
+        {
+            var sum = Sum();
+            return sum / Length;
+        }
+        public int Sum()
+        {
+            var output = 0;
+            for (int i = 0; i < Length; i++)
+            {
+                output += _data[i];
+            }
+
+            return output;
+        }
+        public int[] Reverse(bool newMemory = false)
+        {
+            var output = this._data;
+            var arrayOperations = new ArrayOperations();
+            if (newMemory)
+            {
+                output = arrayOperations.ReverseWithoutNewArray(this._data, Length);
+            }
+            else
+            {
+                output = arrayOperations.ReverseWithNewArray(this._data, Length);
+            }
+
+            return output;
+        }
+
+        // Can we done using new array
+        public int[] LeftShift()
+        {
+            var first = this._data[0];
+
+            for (int i = 1; i < Length; i++)
+            {
+                this._data[i - 1] = this._data[i];
+            }
+
+            this._data[Length - 1] = first;
+            return this._data;
+        }
+
+        public int[] RightShift()
+        {
+            throw new NotImplementedException();
         }
         public IEnumerator<int> GetEnumerator()
         {
