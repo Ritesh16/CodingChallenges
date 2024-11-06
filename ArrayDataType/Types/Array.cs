@@ -145,7 +145,7 @@ namespace ArrayDataType.Types
             return output;
         }
 
-        // Can we done using new array
+        // we can do this using new array
         public int[] LeftShift()
         {
             var first = this._data[0];
@@ -161,7 +161,15 @@ namespace ArrayDataType.Types
 
         public int[] RightShift()
         {
-            throw new NotImplementedException();
+            var last = this._data[Length - 1];
+
+            for (int i = Length - 2; i >= 0; i--)
+            {
+                this._data[i + 1] = this._data[i];
+            }
+
+            this._data[0] = last;
+            return this._data;
         }
         public IEnumerator<int> GetEnumerator()
         {
