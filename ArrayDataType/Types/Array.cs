@@ -171,6 +171,106 @@ namespace ArrayDataType.Types
             this._data[0] = last;
             return this._data;
         }
+        public int[] Union(int[] array1, int[] array2)
+        {
+            var array = new int[array1.Length + array2.Length];
+
+            // Copy element from first array
+            for (int i = 0; i < array1.Length; i++)
+            {
+                array[i] = array1[i];
+            }
+
+            var k = array1.Length;
+
+            for (int i = 0; i < array2.Length; i++)
+            {
+                var isDuplicate = false;
+                for (int j = 0; j < array1.Length; j++)
+                {
+                    if (array[j] == array2[i])
+                    {
+                        isDuplicate = true;
+                        break;
+                    }
+                }
+
+                if(!isDuplicate)
+                {
+                    array[k] = array2[i];
+                    k++;
+                }
+
+            }
+
+            var output = new int[k];
+            System.Array.Copy(array, output, k);
+            
+            return output;
+
+        }
+
+        public int[] Intersection(int[] array1, int[] array2)
+        {
+            var array = new int[array1.Length + array2.Length];
+            var k = 0;
+
+            for (int i = 0; i < array2.Length; i++)
+            {
+                var isDuplicate = false;
+                for (int j = 0; j < array1.Length; j++)
+                {
+                    if (array1[j] == array2[i])
+                    {
+                        isDuplicate = true;
+                        break;
+                    }
+                }
+
+                if (isDuplicate)
+                {
+                    array[k] = array2[i];
+                    k++;
+                }
+
+            }
+
+            var output = new int[k];
+            System.Array.Copy(array, output, k);
+
+            return output;
+        }
+
+        public int[] Difference(int[] array1, int[] array2)
+        {
+            var array = new int[array1.Length + array2.Length];
+            var k = 0;
+
+            for (int i = 0; i < array1.Length; i++)
+            {
+                var isDuplicate = false;
+                for (int j = 0; j < array2.Length; j++)
+                {
+                    if (array1[i] == array2[j])
+                    {
+                        isDuplicate = true;
+                        break;
+                    }
+                }
+
+                if (!isDuplicate)
+                {
+                    array[k] = array1[i];
+                    k++;
+                }
+
+            }
+
+            var output = new int[k];
+            System.Array.Copy(array, output, k);
+
+            return output;
+        }
         public IEnumerator<int> GetEnumerator()
         {
             for (var i = 0; i < Length; i++)
@@ -198,6 +298,21 @@ namespace ArrayDataType.Types
             _data = data;
             _size = newSize;
             return _data;
+        }
+
+        private int[] Initialize(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = int.MaxValue;
+            }
+
+            return array;
+        }
+
+        public int[] ToArray()
+        {
+            throw new NotImplementedException();
         }
     }
 }

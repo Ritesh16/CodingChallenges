@@ -119,3 +119,59 @@ for (int i = 0; i < mergedSortedArray.Length; i++)
 {
     Console.WriteLine(mergedSortedArray[i]);
 }
+
+// Set operations
+var array1 = new int[] { 3, 5, 10, 4, 6 };
+var array2 = new int[] { 12, 4, 7, 2, 5 };
+
+Console.WriteLine("***********************************");
+Console.WriteLine("Union array :");
+
+var arrayOperations = new ArrayDataType.Types.Array();
+var unionOutput = arrayOperations.Union(array1, array2);
+for (int i = 0;i < unionOutput.Length; i++)
+{
+    Console.WriteLine(unionOutput[i]);
+}
+
+Console.WriteLine("***********************************");
+Console.WriteLine("Intesection array :");
+
+var intersectionOutput = arrayOperations.Intersection(array1, array2);
+for (int i = 0; i < intersectionOutput.Length; i++)
+{
+    Console.WriteLine(intersectionOutput[i]);
+}
+
+Console.WriteLine("***********************************");
+Console.WriteLine("Difference array :");
+
+var differenceOutput = arrayOperations.Difference(array1, array2);
+for (int i = 0; i < differenceOutput.Length; i++)
+{
+    Console.WriteLine(differenceOutput[i]);
+}
+
+// Set operations Sorted Arrays
+var sortedArr1 = new int[] { 3, 4, 5, 6, 10, 11 };
+var sortedArr2 = new int[] { 2, 4, 5, 7, 12, 13, 18 };
+
+Console.WriteLine("***********************************");
+Console.WriteLine("Union array Sorted:");
+
+var sortedArrayOperations = new ArrayDataType.Types.SortedArray();
+var sortedUnionOutput = sortedArrayOperations.Union(sortedArr1, sortedArr2);
+for (int i = 0; i < sortedUnionOutput.Length; i++)
+{
+    Console.WriteLine(sortedUnionOutput[i]);
+}
+
+Console.WriteLine("***********************************");
+Console.WriteLine("Intersection array Sorted:");
+
+var intersectionArrayOperations = new ArrayDataType.Types.SortedArray();
+var sortedIntersectionOutput = intersectionArrayOperations.Intersection(sortedArr1, sortedArr2);
+for (int i = 0; i < sortedIntersectionOutput.Length; i++)
+{
+    Console.WriteLine(sortedIntersectionOutput[i]);
+}

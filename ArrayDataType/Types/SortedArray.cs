@@ -65,7 +65,7 @@ namespace ArrayDataType.Types
 
             while (i < array1.Length && j < array2.Length)
             {
-                if(array1[i] <= array2[j])
+                if (array1[i] <= array2[j])
                 {
                     output[k] = array1[i];
                     i++;
@@ -98,9 +98,9 @@ namespace ArrayDataType.Types
         public int[] ToArray()
         {
             var output = new int[Length];
-            for ( int i = 0; i< Length; i++)
+            for (int i = 0; i < Length; i++)
             {
-                output[i] = _data [i];
+                output[i] = _data[i];
             }
 
             return output;
@@ -145,6 +145,105 @@ namespace ArrayDataType.Types
             throw new NotImplementedException();
         }
 
-        
+        public int[] Union(int[] array1, int[] array2)
+        {
+            var i = 0;
+            var j = 0;
+            var k = 0;
+            var array = new int[array1.Length + array2.Length];
+
+            while (i < array1.Length && j < array2.Length)
+            {
+                if (array1[i] < array2[j])
+                {
+                    array[k] = array1[i];
+                    i++;
+                }
+                else if (array1[i] > array2[j])
+                {
+                    array[k] = array2[j];
+                    j++;
+                }
+                else
+                {
+                    array[k] = array1[i];
+                    i++;
+                    j++;
+                }
+
+                k++;
+            }
+
+            while (i < array1.Length)
+            {
+                array[k] = array1[i];
+                i++;
+                k++;
+            }
+
+            while (j < array2.Length)
+            {
+                array[k] = array2[j];
+                j++;
+                k++;
+            }
+
+            var output = new int[k];
+            System.Array.Copy(array, output, k);
+
+            return output;
+        }
+
+        public int[] Intersection(int[] array1, int[] array2)
+        {
+            var i = 0;
+            var j = 0;
+            var k = 0;
+            var array = new int[array1.Length + array2.Length];
+
+            while (i < array1.Length && j < array2.Length)
+            {
+                if (array1[i] == array2[j])
+                {
+                    array[k] = array1[i];
+                    k++;
+                }
+
+                i++;
+                j++;
+            }
+
+           
+            var output = new int[k];
+            System.Array.Copy(array, output, k);
+
+            return output;
+        }
+
+        public int[] Difference(int[] array1, int[] array2)
+        {
+            var i = 0;
+            var j = 0;
+            var k = 0;
+            var array = new int[array1.Length + array2.Length];
+
+            while (i < array1.Length && j < array2.Length)
+            {
+                if (array1[i] == array2[j])
+                {
+                    array[k] = array1[i];
+                    k++;
+                }
+
+                i++;
+                j++;
+            }
+
+
+            var output = new int[k];
+            System.Array.Copy(array, output, k);
+
+            return output;
+        }
     }
 }
