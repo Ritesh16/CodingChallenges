@@ -229,14 +229,21 @@ namespace ArrayDataType.Types
 
             while (i < array1.Length && j < array2.Length)
             {
-                if (array1[i] == array2[j])
+                if (array1[i] < array2[j])
                 {
                     array[k] = array1[i];
                     k++;
+                    i++;
                 }
-
-                i++;
-                j++;
+                else if (array1[i] > array2[j])
+                {
+                    j++;
+                }
+                else
+                {
+                    i++;
+                    j++;
+                }
             }
 
 

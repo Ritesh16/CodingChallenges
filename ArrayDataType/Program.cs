@@ -1,6 +1,7 @@
 ﻿using ArrayDataType.Challenges.ArrangeNegativeToLeft;
 using ArrayDataType.Types;
 using System.Net.Http.Headers;
+using System.Security.Cryptography.X509Certificates;
 
 var array = new ArrayDataType.Types.Array();
 
@@ -175,3 +176,20 @@ for (int i = 0; i < sortedIntersectionOutput.Length; i++)
 {
     Console.WriteLine(sortedIntersectionOutput[i]);
 }
+
+Console.WriteLine("***********************************");
+Console.WriteLine("Difference array Sorted:");
+
+var differenceArrayOperations = new ArrayDataType.Types.SortedArray();
+var sortedDifferenceOutput = intersectionArrayOperations.Difference(sortedArr1, sortedArr2);
+for (int i = 0; i < sortedDifferenceOutput.Length; i++)
+{
+    Console.WriteLine(sortedDifferenceOutput[i]);
+}
+
+Console.WriteLine("***********************************");
+Console.WriteLine("Find missing elements:");
+
+var arrayWithMissingElements = new int[] { 6, 7, 8, 10, 11, 12, 15, 16, 17, 18 };
+var ob = new ArrayDataType.Challenges.FindMissingElement.CodeFile();
+ob.Execute(arrayWithMissingElements);
