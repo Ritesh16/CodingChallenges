@@ -312,7 +312,29 @@ namespace ArrayDataType.Types
 
         public int[] ToArray()
         {
-            throw new NotImplementedException();
+            return _data;
+        }
+
+        public void Duplicates()
+        {
+            var map = new Dictionary<int, int>();
+            for(int i = 0;i < Length;i++)
+            {
+                if(map.ContainsKey(_data[i]))
+                {
+                    map[_data[i]]++;
+                }
+                else
+                {
+                    map[_data[i]] = 1;
+                }
+            }
+
+            var duplicates = map.Where(x => x.Value > 1);
+            foreach(var duplicate in duplicates)
+            {
+                Console.WriteLine($"{duplicate.Key} has {duplicate.Value} occurrences.");
+            }
         }
     }
 }

@@ -13,6 +13,7 @@
         int[] Union(int[] array1, int[] array2);
         int[] Intersection(int[] array1, int[] array2);
         int[] Difference(int[] array1, int[] array2);
+        void Duplicates();
         int[] ToArray();
     }
 }

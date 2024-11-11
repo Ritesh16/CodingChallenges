@@ -213,7 +213,7 @@ namespace ArrayDataType.Types
                 j++;
             }
 
-           
+
             var output = new int[k];
             System.Array.Copy(array, output, k);
 
@@ -251,6 +251,26 @@ namespace ArrayDataType.Types
             System.Array.Copy(array, output, k);
 
             return output;
+        }
+
+        public void Duplicates()
+        {
+            var j = 0;
+            for (int i = 0; i < Length - 1; i++)
+            {
+                if (_data[i] == _data[i + 1])
+                {
+                    j = i + 1;
+                    while (j < Length && _data[j] == _data[i])
+                    {
+                        j++;
+                    }
+
+                    Console.WriteLine($"{_data[i]} has occurred {j-i} times.");
+
+                    i = j + 1;
+                }
+            }
         }
     }
 }

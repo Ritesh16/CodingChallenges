@@ -13,6 +13,12 @@ array.Add(4);
 array.Add(5);
 
 
+String s1 = "C# Example";
+Char[] s3 = s1.ToCharArray();
+
+Console.WriteLine("S3 : {0}", s3);
+
+
 //Console.WriteLine("Items in array:");
 //foreach (var item in array)
 //{
@@ -193,3 +199,42 @@ Console.WriteLine("Find missing elements:");
 var arrayWithMissingElements = new int[] { 6, 7, 8, 10, 11, 12, 15, 16, 17, 18 };
 var ob = new ArrayDataType.Challenges.FindMissingElement.CodeFile();
 ob.Execute(arrayWithMissingElements);
+
+Console.WriteLine("***********************************");
+Console.WriteLine("Find duplicates in sorted array elements:");
+
+//var sortedArrayWithDuplicates = new int[] { 6, 7, 8, 9, 9, 12, 15, 16, 18, 18 };
+var sortedArrayWithDuplicates = new SortedArray();
+sortedArrayWithDuplicates.Add(6);
+sortedArrayWithDuplicates.Add(9);
+sortedArrayWithDuplicates.Add(9);
+sortedArrayWithDuplicates.Add(9);
+sortedArrayWithDuplicates.Add(9);
+sortedArrayWithDuplicates.Add(12);
+sortedArrayWithDuplicates.Add(15);
+sortedArrayWithDuplicates.Add(18);
+sortedArrayWithDuplicates.Add(18);
+sortedArrayWithDuplicates.Add(18);
+
+sortedArrayWithDuplicates.Duplicates();
+
+Console.WriteLine("***********************************");
+Console.WriteLine("Find duplicates in array elements:");
+
+//var sortedArrayWithDuplicates = new int[] { 6, 7, 8, 9, 9, 12, 15, 16, 18, 18 };
+var arrayWithDuplicates = new ArrayDataType.Types.Array
+{
+    6,
+    9,
+    9,
+    9,
+    9,
+    12,
+    15,
+    18,
+    18,
+    18
+};
+
+arrayWithDuplicates.Duplicates();
+
