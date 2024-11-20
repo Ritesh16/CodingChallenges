@@ -24,3 +24,21 @@ Console.WriteLine("Finding Duplicates");
 Console.WriteLine("*****************************************");
 var duplicates = new StringDataType.Challenges.Duplicate.CodeFile();
 duplicates.FindDuplicate("AlphL");
+
+Console.WriteLine("Checking if string is Anagram");
+Console.WriteLine("*****************************************");
+var anagram = new StringDataType.Challenges.Anagram.CodeFile();
+var anagramOutput = anagram.CheckAnagram("decimal", "medical2");
+if(anagramOutput)
+{
+    Console.WriteLine("Strings are anagram");
+}
+else
+{
+    Console.WriteLine("Strings are NOT anagram");
+}
+
+Console.WriteLine("Permutation");
+Console.WriteLine("*****************************************");
+var perm = new StringDataType.Challenges.Permutation.CodeFile();
+perm.Permutation("ABC", 0);
