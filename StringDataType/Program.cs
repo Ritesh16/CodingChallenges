@@ -38,7 +38,13 @@ else
     Console.WriteLine("Strings are NOT anagram");
 }
 
+Console.WriteLine("*****************************************");
+
 Console.WriteLine("Permutation");
 Console.WriteLine("*****************************************");
 var perm = new StringDataType.Challenges.Permutation.CodeFile();
-perm.Permutation("ABC", 0);
+perm.Permutation("ABCD", 0);
+Console.WriteLine("*****************************************");
+Console.WriteLine("*****************************************");
+
+perm.Permutation2(new char[] { 'A', 'B', 'C', 'D' }, 0,  3);
