@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LinkedListDataType.Types
 {
-    public class LinkedList<T> : ILinkedList<T> where T: IComparable<T>
+    public class LinkedList<T> : ILinkedList<T> where T : IComparable<T>
     {
         public Node<T> Head { get; set; }
         public Node<T> Tail { get; set; }
@@ -23,7 +23,7 @@ namespace LinkedListDataType.Types
             var node = new Node<T>();
             node.Value = value;
 
-            if(Length == 0)
+            if (Length == 0)
             {
                 Head = node;
                 Tail = node;
@@ -55,7 +55,7 @@ namespace LinkedListDataType.Types
 
         public void Display_Recursively(Node<T> node)
         {
-            if(node != null)
+            if (node != null)
             {
                 Console.WriteLine(node.Value.ToString());
                 Display_Recursively(node.Next);
@@ -65,7 +65,7 @@ namespace LinkedListDataType.Types
         public int Sum()
         {
             var sum = 0;
-            var head= Head;
+            var head = Head;
 
             while (head != null)
             {
@@ -88,10 +88,10 @@ namespace LinkedListDataType.Types
         public T Max()
         {
             T max = default(T);
-            var head= Head;
+            var head = Head;
             while (head != null)
             {
-                if(head.Value.CompareTo(max) > 0)
+                if (head.Value.CompareTo(max) > 0)
                 {
                     max = head.Value;
                 }
@@ -117,6 +117,88 @@ namespace LinkedListDataType.Types
             }
 
             return min;
+        }
+
+        public Node<T> AddFirst(T value)
+        {
+            var node = new Node<T>();
+            node.Value = value;
+            node.Next = Head;
+
+            Head = node;
+
+            Length++;
+
+            return Head;
+        }
+
+        public Node<T> AddLast(T value)
+        {
+            var node = new Node<T>();
+            node.Value = value;
+
+            Tail.Next = node;
+            Tail = node;
+
+            Length++;
+
+            return Head;
+        }
+
+        public Node<T> Search(T value)
+        {
+            var head = Head;
+            Node<T> node = null;
+            while (head != null)
+            {
+                if(head.Value.Equals(value))
+                {
+                    node = head;
+                    break;
+                }
+
+                head = head.Next;
+            }
+
+            return node;
+        }
+
+        public Node<T> Insert(int index, T value)
+        {
+            var node = new Node<T>(value);
+            var head = Head;
+            if(head == null || index == 0)
+            {
+                return AddFirst(value);
+            }
+
+            if(index - 1 == Length)
+            {
+                return AddLast(value);
+            }
+
+            var i = 0;
+            Node<T> previous = null;
+            while (head != null)
+            {
+                previous = head;
+                head = head.Next;
+
+                i++;
+
+                if (i == index)
+                {
+                    break;
+                }
+
+               
+            }
+
+            previous.Next = node;
+            node.Next = head;
+
+            Length++;
+            return Head;
         }
     }
 }

@@ -9,5 +9,10 @@
         {
             Next = null;
         }
+
+        public Node(T value)
+        {
+            Value = value;
+        }
     }
 }
