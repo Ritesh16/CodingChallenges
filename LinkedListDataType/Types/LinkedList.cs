@@ -222,30 +222,37 @@ namespace LinkedListDataType.Types
             var head = Head;
             Node<T> previous = null;
 
-            while (head != null)
+            // If element to found is head.
+            if(head.Value.Equals(value))
             {
-                if (head.Value.Equals(value))
+                head = head.Next;
+                if(head == null)
                 {
-                    if (previous == null)
-                    {
-                        Head = head.Next;
-                    }
-                    else
-                    {
-                        previous.Next = head.Next;
-                        if (head.Next == null)
-                        {
-                            Tail = previous.Next;
-                        }
-                    }
-
-                    Length--;
-                    break;
+                    Tail = null;
                 }
 
-                previous = head;
+                Length--;
+
+                return Head;
+            }
+
+            // Traversing the list till element is found. 
+            while (head.Next != null && !head.Next.Value.Equals(value))
+            {
                 head = head.Next;
             }
+
+            // If element is not found return head.
+            if (head.Next == null) return Head;
+
+            // If element is the last, then set previous as Tail.
+            if(head.Next == Tail)
+            {
+                Tail = head;
+            }
+
+            head.Next = head.Next.Next;
+            Length--;
 
             return Head;
         }
