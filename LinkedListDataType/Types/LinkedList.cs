@@ -76,11 +76,11 @@ namespace LinkedListDataType.Types
             return sum;
         }
 
-        public void Reverse(Node<T> node)
+        public void PrintReverse(Node<T> node)
         {
             if (node != null)
             {
-                Reverse(node.Next);
+                PrintReverse(node.Next);
                 Console.WriteLine(node.Value.ToString());
             }
         }
@@ -151,7 +151,7 @@ namespace LinkedListDataType.Types
             Node<T> node = null;
             while (head != null)
             {
-                if(head.Value.Equals(value))
+                if (head.Value.Equals(value))
                 {
                     node = head;
                     break;
@@ -167,12 +167,12 @@ namespace LinkedListDataType.Types
         {
             var node = new Node<T>(value);
             var head = Head;
-            if(head == null || index == 0)
+            if (head == null || index == 0)
             {
                 return AddFirst(value);
             }
 
-            if(index - 1 == Length)
+            if (index - 1 == Length)
             {
                 return AddLast(value);
             }
@@ -183,15 +183,12 @@ namespace LinkedListDataType.Types
             {
                 previous = head;
                 head = head.Next;
-
                 i++;
 
                 if (i == index)
                 {
                     break;
                 }
-
-               
             }
 
             previous.Next = node;
@@ -199,6 +196,72 @@ namespace LinkedListDataType.Types
 
             Length++;
             return Head;
+        }
+
+        public Node<T> Reverse()
+        {
+            var head = Head;
+            Node<T> first = head, second = null, third = null;
+
+            while (first != null)
+            {
+                third = second;
+                second = first;
+                first = first.Next;
+
+                second.Next = third;
+            }
+
+            first = second;
+
+            return first;
+        }
+
+        public Node<T> Delete(T value)
+        {
+            var head = Head;
+            Node<T> previous = null;
+
+            while (head != null)
+            {
+                if (head.Value.Equals(value))
+                {
+                    if (previous == null)
+                    {
+                        Head = head.Next;
+                    }
+                    else
+                    {
+                        previous.Next = head.Next;
+                        if (head.Next == null)
+                        {
+                            Tail = previous.Next;
+                        }
+                    }
+
+                    Length--;
+                    break;
+                }
+
+                previous = head;
+                head = head.Next;
+            }
+
+            return Head;
+        }
+
+        public void Reverse_Recursively(Node<T> node, Node<T> previous)
+        {
+            if (node != null)
+            {
+                Reverse_Recursively(node.Next, node);
+                node.Next = previous;
+                Tail = node;
+            }
+            else
+            {
+                Head = previous;
+            }
         }
     }
 }

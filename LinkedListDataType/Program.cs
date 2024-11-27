@@ -15,17 +15,19 @@ while (choice == "a")
     Console.WriteLine("7. Add first in the List");
     Console.WriteLine("8. Add last in the List");
     Console.WriteLine("9. Insert in index List");
+    Console.WriteLine("10.Reverse Linked List");
+    Console.WriteLine("11.Delete from Linked List");
 
     Console.WriteLine("Press any key to continue or hit 'x' to quit.");
 
     choice = Console.ReadLine();
     LinkedListDataType.Types.LinkedList<int> linkedList = new LinkedListDataType.Types.LinkedList<int>();
-    linkedList.Add(4);
-    linkedList.Add(3);
-    linkedList.Add(6);
     linkedList.Add(1);
     linkedList.Add(2);
+    linkedList.Add(3);
+    linkedList.Add(4);
     linkedList.Add(5);
+    linkedList.Add(6);
 
     switch (choice)
     {
@@ -37,7 +39,7 @@ while (choice == "a")
         case "2":
             Console.WriteLine("*********************************");
             Console.WriteLine("Printing Reverse Linked List");
-            linkedList.Reverse(linkedList.Head);
+            linkedList.PrintReverse(linkedList.Head);
             break;
 
         case "3":
@@ -87,6 +89,28 @@ while (choice == "a")
             Console.WriteLine("Add at index in linked list");
             linkedList.Insert(6, 100);
             linkedList.Display();
+            break;
+
+        case "10":
+            Console.WriteLine("*********************************");
+            Console.WriteLine("Reversing a linked list");
+            linkedList.Reverse_Recursively(linkedList.Head, null);
+            linkedList.Display();
+
+            Console.WriteLine("*********************************");
+            Console.WriteLine("*********************************");
+            break;
+
+        case "11":
+            Console.WriteLine("*********************************");
+            Console.WriteLine("Deleting from linked list");
+            linkedList.Delete(6);
+            linkedList.Display();
+
+            Console.WriteLine("*********************************");
+            Console.WriteLine("*********************************");
+
+
             break;
 
         default:
