@@ -270,5 +270,52 @@ namespace LinkedListDataType.Types
                 Head = previous;
             }
         }
+
+        public bool HasLoop(Node<T> node)
+        {
+            if (node == null) return false;
+
+            var slow = node;
+            var fast = node.Next;
+
+            while (fast != null && fast.Next != null)
+            {
+                if(slow == fast.Next) return true;
+
+                slow = slow.Next;
+                fast = fast.Next.Next;
+            }
+
+            return false;
+        }
+
+        public Node<T> Merge(Node<T> first, Node<T> second)
+        {
+            var list1 = first;
+            var list2 = second;
+            Node<T> preHead = new Node<T>();
+
+            var node = preHead;
+
+            while (list1 != null && list2 != null)
+            {
+                if(list1.Value.CompareTo(list2.Value) <= 0)
+                {
+                    node.Next = list1;
+                    list1 = list1.Next;
+                }
+                else
+                {
+                    node.Next = list2;
+                    list2 = list2.Next; 
+                }
+
+                node = node.Next;
+            }
+
+            node.Next = list1 != null ? list1 : list2; 
+
+            return preHead.Next;
+        }
     }
 }

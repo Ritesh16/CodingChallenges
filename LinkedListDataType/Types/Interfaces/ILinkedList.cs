@@ -20,6 +20,8 @@
         public Node<T> Reverse();
         public void Reverse_Recursively(Node<T> first, Node<T> second);
         public Node<T> Delete(T value);
+        public bool HasLoop(Node<T> node);
+        public Node<T> Merge(Node<T> first, Node<T> second);
 
     }
 }

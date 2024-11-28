@@ -1,4 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using LinkedListDataType.Types;
+
 var choice = "a";
 
 while (choice == "a")
@@ -17,6 +19,8 @@ while (choice == "a")
     Console.WriteLine("9. Insert in index List");
     Console.WriteLine("10.Reverse Linked List");
     Console.WriteLine("11.Delete from Linked List");
+    Console.WriteLine("12.Has loop in Linked List");
+    Console.WriteLine("13.Merge 2 linked lists");
 
     Console.WriteLine("Press any key to continue or hit 'x' to quit.");
 
@@ -109,8 +113,60 @@ while (choice == "a")
 
             Console.WriteLine("*********************************");
             Console.WriteLine("*********************************");
+            break;
+
+        case "12":
+            Console.WriteLine("*********************************");
+            Console.WriteLine("Checking for loop in Linked List");
+            var node = new Node<int>(1);
+            var second = new Node<int>(2);
+            second.Next = new Node<int>(3);
+            node.Next = second;
+            var fourth = new Node<int>(4);
+            fourth.Next = second;
+
+            second.Next.Next = fourth;
+
+            var hasLoop = linkedList.HasLoop(node);
+            if (hasLoop)
+            {
+                Console.WriteLine("Linked list has loop");
+            }
+            else
+            {
+                Console.WriteLine("Linked list does not have loop");
+            }
 
 
+            Console.WriteLine("*********************************");
+            Console.WriteLine("*********************************");
+            break;
+
+        case "13":
+            Console.WriteLine("*********************************");
+            Console.WriteLine("Merging linked list");
+            var mergeList1 = new Node<int>(2);
+            mergeList1.Next = new Node<int>(8);
+            mergeList1.Next.Next = new Node<int>(11);
+            mergeList1.Next.Next.Next = new Node<int>(15);
+            mergeList1.Next.Next.Next.Next = new Node<int>(16);
+
+            var mergeList2 = new Node<int>(4);
+            mergeList2.Next = new Node<int>(9);
+            mergeList2.Next.Next = new Node<int>(10);
+
+            Console.ForegroundColor = ConsoleColor.Green;
+
+            var mergedList = linkedList.Merge(mergeList1, mergeList2);
+            while (mergedList != null)
+            {
+                Console.WriteLine(mergedList.Value);
+                mergedList = mergedList.Next;
+            }
+
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("*********************************");
             break;
 
         default:
