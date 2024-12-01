@@ -127,6 +127,11 @@ namespace LinkedListDataType.Types
 
             Head = node;
 
+            if (Length == 0)
+            {
+                Tail = node;
+            }
+
             Length++;
 
             return Head;
@@ -137,8 +142,16 @@ namespace LinkedListDataType.Types
             var node = new Node<T>();
             node.Value = value;
 
-            Tail.Next = node;
-            Tail = node;
+            if (Length == 0)
+            {
+                Tail = node;
+                Head = node;
+            }
+            else
+            {
+                Tail.Next = node;
+                Tail = node;
+            }
 
             Length++;
 
@@ -191,6 +204,11 @@ namespace LinkedListDataType.Types
                 }
             }
 
+            if(head == null)
+            {
+                Tail = node;
+            }
+
             previous.Next = node;
             node.Next = head;
 
@@ -223,10 +241,10 @@ namespace LinkedListDataType.Types
             Node<T> previous = null;
 
             // If element to found is head.
-            if(head.Value.Equals(value))
+            if (head.Value.Equals(value))
             {
                 head = head.Next;
-                if(head == null)
+                if (head == null)
                 {
                     Tail = null;
                 }
@@ -246,7 +264,7 @@ namespace LinkedListDataType.Types
             if (head.Next == null) return Head;
 
             // If element is the last, then set previous as Tail.
-            if(head.Next == Tail)
+            if (head.Next == Tail)
             {
                 Tail = head;
             }
@@ -280,7 +298,7 @@ namespace LinkedListDataType.Types
 
             while (fast != null && fast.Next != null)
             {
-                if(slow == fast.Next) return true;
+                if (slow == fast.Next) return true;
 
                 slow = slow.Next;
                 fast = fast.Next.Next;
@@ -299,7 +317,7 @@ namespace LinkedListDataType.Types
 
             while (list1 != null && list2 != null)
             {
-                if(list1.Value.CompareTo(list2.Value) <= 0)
+                if (list1.Value.CompareTo(list2.Value) <= 0)
                 {
                     node.Next = list1;
                     list1 = list1.Next;
@@ -307,15 +325,106 @@ namespace LinkedListDataType.Types
                 else
                 {
                     node.Next = list2;
-                    list2 = list2.Next; 
+                    list2 = list2.Next;
                 }
 
                 node = node.Next;
             }
 
-            node.Next = list1 != null ? list1 : list2; 
+            node.Next = list1 != null ? list1 : list2;
 
             return preHead.Next;
+        }
+
+        public Node<T> Middle(Node<T> node)
+        {
+            var fast = node;
+            var slow = node;
+
+            while (fast != null && fast.Next != null)
+            {
+                slow = slow.Next;
+                fast = fast.Next.Next;
+            }
+
+            return slow;
+        }
+
+        //public Node<T> Intersection(Node<T> node1, Node<T> node2)
+        //{
+        //    var headA = node1;
+        //    var headB = node2;
+
+        //    while(headA != headB)
+        //    {
+        //        headA = headA == null ? node2 : headA.Next;
+        //        headB = headB == null ? node1 : headB.Next; 
+        //    }
+
+        //    return headA;
+        //}
+
+        public Node<T> Intersection(Node<T> node1, Node<T> node2)
+        {
+            var headA = node1;
+            var headB = node2;
+
+            var count1 = 0;
+            var count2 = 0;
+
+            while (headA != null)
+            {
+                headA = headA.Next;
+                count1++;
+            }
+
+            while (headB != null)
+            {
+                headB = headB.Next;
+                count2++;
+            }
+
+            Node<T> result = null;
+
+            if (count1 >= count2)
+            {
+                result = GetIntersection(node1, node2, count1, count2);
+            }
+            else
+            {
+                result = GetIntersection(node2, node1, count2, count1);
+            }
+
+            result = GetIntersection(node1, node2, count1, count2);
+            return result;
+        }
+
+        public Node<T> GetIntersection(Node<T> node1, Node<T> node2, int count1, int count2)
+        {
+            var head1 = node1;
+            var head2 = node2;
+
+            var count = 0;
+            var difference = count1 - count2;
+            while (count < difference)
+            {
+                head1 = head1.Next;
+                count++;
+            }
+
+            while (head1 != null)
+            {
+                if (head1 == head2)
+                {
+                    break;
+                }
+
+                head1 = head1.Next;
+                head2 = head2.Next;
+            }
+
+            return head1;
+
         }
     }
 }

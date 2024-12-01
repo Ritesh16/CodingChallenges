@@ -21,6 +21,9 @@ while (choice == "a")
     Console.WriteLine("11.Delete from Linked List");
     Console.WriteLine("12.Has loop in Linked List");
     Console.WriteLine("13.Merge 2 linked lists");
+    Console.WriteLine("14.Middle of linked list");
+    Console.WriteLine("15.Intersection of linked list");
+    Console.WriteLine("15.Circular linked list");
 
     Console.WriteLine("Press any key to continue or hit 'x' to quit.");
 
@@ -32,6 +35,8 @@ while (choice == "a")
     linkedList.Add(4);
     linkedList.Add(5);
     linkedList.Add(6);
+    linkedList.Add(7);
+    linkedList.Add(8);
 
     switch (choice)
     {
@@ -91,7 +96,7 @@ while (choice == "a")
         case "9":
             Console.WriteLine("*********************************");
             Console.WriteLine("Add at index in linked list");
-            linkedList.Insert(6, 100);
+            linkedList.Insert(9, 100);
             linkedList.Display();
             break;
 
@@ -167,6 +172,70 @@ while (choice == "a")
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("*********************************");
+            break;
+
+        case "14":
+            Console.WriteLine("*********************************");
+            Console.WriteLine("Merging linked list");
+            Console.ForegroundColor = ConsoleColor.Green;
+
+            var middle = linkedList.Middle(linkedList.Head);
+
+            Console.WriteLine($"Middle node is {middle.Value}");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("*********************************");
+            break;
+
+        case "15":
+            Console.WriteLine("*********************************");
+            Console.WriteLine("Intersection of linked list");
+            var intersectionList1 = new Node<int>(1);
+            intersectionList1.Next = new Node<int>(12);
+            intersectionList1.Next.Next = new Node<int>(10);
+            intersectionList1.Next.Next.Next = new Node<int>(5);
+
+            var intersectionNode = new Node<int>(2);
+            intersectionNode.Next = new Node<int>(7);
+            intersectionNode.Next.Next = new Node<int>(8);
+
+            intersectionList1.Next.Next.Next.Next = intersectionNode;
+
+            var intersectionList2 = new Node<int>(6);
+            intersectionList2.Next = new Node<int>(100);
+            intersectionList2.Next.Next = intersectionNode;
+
+
+            Console.ForegroundColor = ConsoleColor.Green;
+
+            var intersection = linkedList.Intersection(intersectionList1, intersectionList2);
+
+            Console.WriteLine($"Intersection node is {intersection.Value}");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("*********************************");
+            break;
+
+        case "16":
+            Console.WriteLine("*********************************");
+            Console.WriteLine("Circular linked list");
+            LinkedListDataType.Types.CircularLinkedList<int> circularLinkedList = new LinkedListDataType.Types.CircularLinkedList<int>();
+            circularLinkedList.Add(0);
+            circularLinkedList.Add(1);
+            circularLinkedList.Add(2);
+            circularLinkedList.AddLast(3);
+            circularLinkedList.AddLast(4);
+
+            circularLinkedList.Insert(5, 10);
+
+            var head = circularLinkedList.Head;
+            var tail = circularLinkedList.Tail;
+            do
+            {
+                Console.WriteLine(head.Value);
+                head = head.Next;
+            }
+            while (head != tail.Next);
+
+
             break;
 
         default:

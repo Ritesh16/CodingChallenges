@@ -22,6 +22,9 @@
         public Node<T> Delete(T value);
         public bool HasLoop(Node<T> node);
         public Node<T> Merge(Node<T> first, Node<T> second);
+        public Node<T> Middle(Node<T> node);
+        public Node<T> Intersection(Node<T> node1, Node<T> node2);
+
 
     }
 }
