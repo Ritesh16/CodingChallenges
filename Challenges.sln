@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArrayDataType", "ArrayDataT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringDataType", "StringDataType\StringDataType.csproj", "{38925E5E-247B-4D0E-A40F-8FC430FCE3AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedListDataType", "LinkedListDataType\LinkedListDataType.csproj", "{067ECD88-6A18-4666-82FD-136DEDFBFEE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkedListDataType", "LinkedListDataType\LinkedListDataType.csproj", "{067ECD88-6A18-4666-82FD-136DEDFBFEE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeDataType", "TreeDataType\TreeDataType.csproj", "{7472B4DF-3B0A-4B22-97B3-A1E22460C4AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{067ECD88-6A18-4666-82FD-136DEDFBFEE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{067ECD88-6A18-4666-82FD-136DEDFBFEE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{067ECD88-6A18-4666-82FD-136DEDFBFEE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7472B4DF-3B0A-4B22-97B3-A1E22460C4AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7472B4DF-3B0A-4B22-97B3-A1E22460C4AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7472B4DF-3B0A-4B22-97B3-A1E22460C4AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7472B4DF-3B0A-4B22-97B3-A1E22460C4AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
