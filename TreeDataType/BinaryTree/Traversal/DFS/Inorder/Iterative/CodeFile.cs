@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TreeDataType.BinaryTree.Traversal.Postorder.Iterative
+namespace TreeDataType.BinaryTree.Traversal.DFS.Inorder.Iterative
 {
     public class CodeFile<T>
     {
@@ -12,7 +12,6 @@ namespace TreeDataType.BinaryTree.Traversal.Postorder.Iterative
         {
             var stack = new Stack<Node<T>>();
             var output = new List<T>();
-            Node<T> previousNode = null;
 
             while (node != null || stack.Count > 0)
             {
@@ -20,20 +19,12 @@ namespace TreeDataType.BinaryTree.Traversal.Postorder.Iterative
                 {
                     stack.Push(node);
                     node = node.Left;
+
                 }
 
-                node = stack.Peek();
-                if (node.Right != null && node.Right != previousNode)
-                {
-                    node = node.Right;
-                }
-                else
-                {
-                    node = stack.Pop();
-                    output.Add(node.Value);
-                    previousNode = node;
-                    node = null;
-                }
+                node = stack.Pop();
+                output.Add(node.Value);
+                node = node.Right;
             }
 
             return output;

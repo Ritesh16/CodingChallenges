@@ -1,4 +1,4 @@
-﻿namespace TreeDataType.BinaryTree.Traversal.Preorder.Iterative
+﻿namespace TreeDataType.BinaryTree.Traversal.DFS.Preorder.Iterative
 {
     public class CodeFile<T>
     {

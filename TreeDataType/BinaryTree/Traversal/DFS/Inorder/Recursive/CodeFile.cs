@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TreeDataType.BinaryTree.Traversal.Inorder.Recursive
+namespace TreeDataType.BinaryTree.Traversal.DFS.Inorder.Recursive
 {
     public class CodeFile<T>
     {

@@ -16,7 +16,8 @@ while (choice == "a")
     Console.WriteLine("4. Inorder traversal using Iteration");
     Console.WriteLine("5. Postorder traversal using Recursion");
     Console.WriteLine("6. Postorder traversal using Iteration");
-
+    Console.WriteLine("7. Levelorder traversal using Iteration");
+    Console.WriteLine("8. Levelorder traversal using Recursion");
     Console.WriteLine("Press any key to continue or hit 'x' to quit.");
 
     choice = Console.ReadLine();
@@ -41,7 +42,7 @@ while (choice == "a")
         case "1":
             Console.WriteLine("****************************************");
             Console.WriteLine("Preorder Recursive");
-            var preorder_Recursive = new TreeDataType.BinaryTree.Traversal.Preorder.Recursive.CodeFile<string>();
+            var preorder_Recursive = new TreeDataType.BinaryTree.Traversal.DFS.Preorder.Recursive.CodeFile<string>();
             preorder_Recursive.Traverse(node);
 
             Console.WriteLine("****************************************");
@@ -51,7 +52,7 @@ while (choice == "a")
         case "2":
             Console.WriteLine("****************************************");
             Console.WriteLine("Preorder Iterative");
-            var preorder_Iterative = new TreeDataType.BinaryTree.Traversal.Preorder.Iterative.CodeFile<string>();
+            var preorder_Iterative = new TreeDataType.BinaryTree.Traversal.DFS.Preorder.Iterative.CodeFile<string>();
             var prepOrderList = preorder_Iterative.Traverse(node);
             foreach (var val in prepOrderList)
             {
@@ -64,7 +65,7 @@ while (choice == "a")
 
         case "3":
             Console.WriteLine("Inorder Recursive");
-            var inorder_Recursive = new TreeDataType.BinaryTree.Traversal.Inorder.Recursive.CodeFile<string>();
+            var inorder_Recursive = new TreeDataType.BinaryTree.Traversal.DFS.Inorder.Recursive.CodeFile<string>();
             inorder_Recursive.Traverse(node);
 
             Console.WriteLine("****************************************");
@@ -73,7 +74,7 @@ while (choice == "a")
 
         case "4":
             Console.WriteLine("Inorder Iterative");
-            var inorder_Iterative = new TreeDataType.BinaryTree.Traversal.Inorder.Iterative.CodeFile<string>();
+            var inorder_Iterative = new TreeDataType.BinaryTree.Traversal.DFS.Inorder.Iterative.CodeFile<string>();
             var inorderList = inorder_Iterative.Traverse(node);
             foreach (var val in inorderList)
             {
@@ -86,7 +87,7 @@ while (choice == "a")
 
         case "5":
             Console.WriteLine("Postorder Recursive");
-            var postorder_Recursive = new TreeDataType.BinaryTree.Traversal.Postorder.Recursive.CodeFile<string>();
+            var postorder_Recursive = new TreeDataType.BinaryTree.Traversal.DFS.Postorder.Recursive.CodeFile<string>();
             postorder_Recursive.Traverse(node);
             Console.WriteLine("****************************************");
             Console.WriteLine();
@@ -94,10 +95,38 @@ while (choice == "a")
 
         case "6":
             Console.WriteLine("Postorder Iterative");
-            var postorder_Iterative = new TreeDataType.BinaryTree.Traversal.Postorder.Iterative.CodeFile<string>();
+            var postorder_Iterative = new TreeDataType.BinaryTree.Traversal.DFS.Postorder.Iterative.CodeFile<string>();
             var postorderList = postorder_Iterative.Traverse(node);
 
             foreach (var val in postorderList)
+            {
+                Console.WriteLine(val);
+            }
+
+            Console.WriteLine("****************************************");
+            Console.WriteLine();
+            break;
+
+        case "7":
+            Console.WriteLine("Levelorder Iterative");
+            var levelorder_Iterative = new TreeDataType.BinaryTree.Traversal.BFS.Levelorder.Iterative.CodeFile<string>();
+            var levelorderList = levelorder_Iterative.Traverse(node);
+
+            foreach (var val in levelorderList)
+            {
+                Console.WriteLine(val);
+            }
+
+            Console.WriteLine("****************************************");
+            Console.WriteLine();
+            break;
+
+        case "8":
+            Console.WriteLine("Levelorder Recursive");
+            var levelorder_Recursive = new TreeDataType.BinaryTree.Traversal.BFS.Levelorder.Recursive.CodeFile<string>();
+            var levelorderListRecursive = levelorder_Recursive.Traverse(node);
+
+            foreach (var val in levelorderListRecursive)
             {
                 Console.WriteLine(val);
             }

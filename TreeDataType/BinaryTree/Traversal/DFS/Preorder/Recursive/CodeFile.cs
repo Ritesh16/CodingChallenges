@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TreeDataType.BinaryTree.Traversal.Postorder.Recursive
+﻿namespace TreeDataType.BinaryTree.Traversal.DFS.Preorder.Recursive
 {
     public class CodeFile<T>
     {
@@ -12,9 +6,9 @@ namespace TreeDataType.BinaryTree.Traversal.Postorder.Recursive
         {
             if (node != null)
             {
+                Console.WriteLine(node.Value);
                 Traverse(node.Left);
                 Traverse(node.Right);
-                Console.WriteLine(node.Value);
             }
         }
     }
