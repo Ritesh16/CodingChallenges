@@ -24,9 +24,18 @@ namespace Practice.BinaryTree.DFS.InOrderTraversal
                     node = node.left;
                 }
 
-                node = stack.Pop();
-                output.Add(node.val);
-                node = node.right;
+                node = stack.Peek();
+                
+                if (node.right == null) 
+                {
+                    node = stack.Pop();
+                    output.Add(node.val);
+                }
+                else
+                {
+                    stack.Push(node.right);
+                }
+              
             }
 
             return output;

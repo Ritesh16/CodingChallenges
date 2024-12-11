@@ -18,6 +18,13 @@ while (choice == "a")
     Console.WriteLine("6. Postorder traversal using Iteration");
     Console.WriteLine("7. Levelorder traversal using Iteration");
     Console.WriteLine("8. Levelorder traversal using Recursion");
+    Console.WriteLine("9. Count nodes using Recursion");
+    Console.WriteLine("10.Count nodes using Iteration");
+    Console.WriteLine("11. Height of Tree using Recursion");
+    Console.WriteLine("12. Calculate leaf nodes of Tree using Recursion");
+    Console.WriteLine("13. Calculate nodes with 2 children of Tree using Recursion");
+    Console.WriteLine("14. Calculate nodes with 1 children of Tree using Recursion");
+
     Console.WriteLine("Press any key to continue or hit 'x' to quit.");
 
     choice = Console.ReadLine();
@@ -27,13 +34,15 @@ while (choice == "a")
     var leftTree = new Node<string>("B");
     leftTree.Left = new Node<string>("C");
     leftTree.Right = new Node<string>("D");
+    leftTree.Right.Right = new Node<string>("D1");
 
     node.Left = leftTree;
 
     var rightTree = new Node<string>("E");
     rightTree.Left = new Node<string>("F");
     rightTree.Right = new Node<string>("G");
-    rightTree.Right.Left = new Node<string>("H");
+    //rightTree.Right.Left = new Node<string>("H");
+    //rightTree.Right.Left.Left = new Node<string>("I");
 
     node.Right = rightTree;
 
@@ -130,6 +139,72 @@ while (choice == "a")
             {
                 Console.WriteLine(val);
             }
+
+            Console.WriteLine("****************************************");
+            Console.WriteLine();
+            break;
+
+        case "9":
+            Console.WriteLine("Count nodes Recursive");
+            var countNodesRecursive = new TreeDataType.BinaryTree.CountNodesInBinaryTree.Recursive.CodeFile<string>();
+            var count = countNodesRecursive.Count(node);
+
+            Console.WriteLine(count);
+
+            Console.WriteLine("****************************************");
+            Console.WriteLine();
+            break;
+
+        case "10":
+            Console.WriteLine("Count nodes Iterative");
+            var countNodesIterative = new TreeDataType.BinaryTree.CountNodesInBinaryTree.Iterative.CodeFile<string>();
+            var countIterative = countNodesIterative.Count(node);
+
+            Console.WriteLine(countIterative);
+
+            Console.WriteLine("****************************************");
+            Console.WriteLine();
+            break;
+
+        case "11":
+            Console.WriteLine("Height of tree using Recursion");
+            var heightRecursion = new TreeDataType.BinaryTree.HeightInBinaryTree.Recursion.CodeFile<string>();
+            var height = heightRecursion.CalculateHeight(node);
+
+            Console.WriteLine(height);
+
+            Console.WriteLine("****************************************");
+            Console.WriteLine();
+            break;
+
+        case "12":
+            Console.WriteLine("Count leaf nodes using Recursion");
+            var leafNodesRecursion = new TreeDataType.BinaryTree.CountLeafNodes.Recursive.CodeFile<string>();
+            var leafNodes = leafNodesRecursion.CountLeafNodes(node);
+
+            Console.WriteLine(leafNodes);
+
+            Console.WriteLine("****************************************");
+            Console.WriteLine();
+            break;
+
+        case "13":
+            Console.WriteLine("Count nodes with 2 children using Recursion");
+            var nodesWith2ChildrenRecursion = new TreeDataType.BinaryTree.CountLeafNodes.Recursive.CodeFile<string>();
+            var nodeCountWith2Children = nodesWith2ChildrenRecursion.CountNodesWith2Children(node);
+
+            Console.WriteLine(nodeCountWith2Children);
+
+            Console.WriteLine("****************************************");
+            Console.WriteLine();
+            break;
+
+        case "14":
+            Console.WriteLine("Count nodes with 1 children using Recursion");
+            var nodesWith1ChildrenRecursion = new TreeDataType.BinaryTree.CountLeafNodes.Recursive.CodeFile<string>();
+            var nodeCountWith1Children = nodesWith1ChildrenRecursion.CountNodesWith1Children(node);
+
+            Console.WriteLine(nodeCountWith1Children);
 
             Console.WriteLine("****************************************");
             Console.WriteLine();
