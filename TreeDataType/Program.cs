@@ -24,6 +24,8 @@ while (choice == "a")
     Console.WriteLine("12. Calculate leaf nodes of Tree using Recursion");
     Console.WriteLine("13. Calculate nodes with 2 children of Tree using Recursion");
     Console.WriteLine("14. Calculate nodes with 1 children of Tree using Recursion");
+    Console.WriteLine("15. Insert in Binary Search Tree using Iteration.");
+    Console.WriteLine("16. Insert in Binary Search Tree using Recursion.");
 
     Console.WriteLine("Press any key to continue or hit 'x' to quit.");
 
@@ -205,6 +207,38 @@ while (choice == "a")
             var nodeCountWith1Children = nodesWith1ChildrenRecursion.CountNodesWith1Children(node);
 
             Console.WriteLine(nodeCountWith1Children);
+
+            Console.WriteLine("****************************************");
+            Console.WriteLine();
+            break;
+
+        case "15":
+            Console.WriteLine("Insert in binary search tree using iteration");
+            var bstIteration = new TreeDataType.BinarySearchTree.Types.BinarySearchTree();
+            var i1 = bstIteration.Insert(30);
+            var i2 = bstIteration.Insert(10);
+            var i3 = bstIteration.Insert(15);
+            var i4 = bstIteration.Insert(40);
+            var i5 = bstIteration.Insert(45);
+            var i6 = bstIteration.Insert(27);
+            var i7 = bstIteration.Insert(12);
+            Console.WriteLine("****************************************");
+            Console.WriteLine();
+            break;
+
+
+        case "16":
+            Console.WriteLine("Insert in binary search tree using recursion");
+            var bstRecursion = new TreeDataType.BinarySearchTree.Types.BinarySearchTree();
+            Node<int> root = null;
+            root = bstRecursion.Insert(root, 30);
+            root = bstRecursion.Insert(root, 10);
+            root = bstRecursion.Insert(root, 15);
+            root = bstRecursion.Insert(root, 40);
+            root = bstRecursion.Insert(root, 45);
+            root = bstRecursion.Insert(root, 27);
+            root = bstRecursion.Insert(root, 12);
+
 
             Console.WriteLine("****************************************");
             Console.WriteLine();
