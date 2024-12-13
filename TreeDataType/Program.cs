@@ -26,6 +26,8 @@ while (choice == "a")
     Console.WriteLine("14. Calculate nodes with 1 children of Tree using Recursion");
     Console.WriteLine("15. Insert in Binary Search Tree using Iteration.");
     Console.WriteLine("16. Insert in Binary Search Tree using Recursion.");
+    Console.WriteLine("17. Delete in Binary Search Tree.");
+
 
     Console.WriteLine("Press any key to continue or hit 'x' to quit.");
 
@@ -239,6 +241,29 @@ while (choice == "a")
             root = bstRecursion.Insert(root, 27);
             root = bstRecursion.Insert(root, 12);
 
+
+            Console.WriteLine("****************************************");
+            Console.WriteLine();
+            break;
+
+        case "17":
+
+            var bstDelete = new TreeDataType.BinarySearchTree.Types.BinarySearchTree();
+            bstDelete.Insert(30);
+            bstDelete.Insert(10);
+            bstDelete.Insert(15);
+            bstDelete.Insert(40);
+            bstDelete.Insert(45);
+            bstDelete.Insert(27);
+            bstDelete.Insert(12);
+
+            Console.WriteLine("What value you want to delete? 30, 10, 15, 40, 45, 27, 12 ?");
+            Console.WriteLine("Delete in binary search tree.");
+            var number = Convert.ToInt32(Console.ReadLine());   
+
+            
+
+            var nooode = bstDelete.Delete(number);
 
             Console.WriteLine("****************************************");
             Console.WriteLine();

@@ -7,5 +7,6 @@ namespace TreeDataType.BinarySearchTree.Types.Interfaces
         Node<int> Root { get; set; }
         Node<int> Insert(int value);
         Node<int> Insert(Node<int> root, int value);
+        Node<int> Delete(int value);
     }
 }
