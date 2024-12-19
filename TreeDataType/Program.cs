@@ -27,6 +27,7 @@ while (choice == "a")
     Console.WriteLine("15. Insert in Binary Search Tree using Iteration.");
     Console.WriteLine("16. Insert in Binary Search Tree using Recursion.");
     Console.WriteLine("17. Delete in Binary Search Tree.");
+    Console.WriteLine("18. Create BST from Preorder.");
 
 
     Console.WriteLine("Press any key to continue or hit 'x' to quit.");
@@ -259,11 +260,19 @@ while (choice == "a")
 
             Console.WriteLine("What value you want to delete? 30, 10, 15, 40, 45, 27, 12 ?");
             Console.WriteLine("Delete in binary search tree.");
-            var number = Convert.ToInt32(Console.ReadLine());   
+            var number = Convert.ToInt32(Console.ReadLine());
 
-            
+            var nodeToDelete = bstDelete.Delete(number);
 
-            var nooode = bstDelete.Delete(number);
+            Console.WriteLine("****************************************");
+            Console.WriteLine();
+            break;
+
+        case "18":
+
+            var createBSTFromPreorder = new TreeDataType.BinarySearchTree.Challenges.CreateBSTFromPreorder.CodeFile();
+            var array = new int[] { 30, 20, 10, 15, 25, 40, 50, 45 };
+            var tree = createBSTFromPreorder.CreateTree(array);
 
             Console.WriteLine("****************************************");
             Console.WriteLine();
