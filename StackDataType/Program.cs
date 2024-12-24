@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 Console.WriteLine("Hello, World!");
-StackDataType.Types.Interfaces.IStack<int> stack = new StackDataType.Types.StackUsingArray<int>(5);
+StackDataType.Types.Interfaces.IStack<int> stack = new StackDataType.Types.StackUsingLinkedList();
 stack.Push(1);
 stack.Push(2);
 stack.Push(3);

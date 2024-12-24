@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LinkedListDataType\LinkedListDataType.csproj" />
+  </ItemGroup>
+
 </Project>

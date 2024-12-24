@@ -6,18 +6,25 @@ namespace StackDataType.Types
     {
         private T[] _array;
         private int _size = 10;
-        public int Count { get; set; }
+        private int _count = 0;
+        public int Count 
+        { 
+            get
+            {
+                return _count;
+            }
+        }
         public StackUsingArray()
         {
             _array = new T[_size];
-            Count = 0;
+            _count = 0;
         }
 
         public StackUsingArray(int size)
         {
             _size = size;
             _array = new T[_size];
-            Count = 0;
+            _count = 0;
         }
         public T Peek()
         {
@@ -38,13 +45,13 @@ namespace StackDataType.Types
 
             var output = _array[Count - 1];
             _array[Count - 1] = default(T);
-            Count--;
+            _count--;
             return output;
         }
 
         public void Push(T value)
         {
-            _array[Count++] = value;
+            _array[_count++] = value;
 
             if (_size == Count)
             {
