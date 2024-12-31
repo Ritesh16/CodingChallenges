@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkedListDataType", "Linke
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeDataType", "TreeDataType\TreeDataType.csproj", "{7472B4DF-3B0A-4B22-97B3-A1E22460C4AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackDataType", "StackDataType\StackDataType.csproj", "{D4EC68ED-99C2-4382-8401-731CA732B693}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StackDataType", "StackDataType\StackDataType.csproj", "{D4EC68ED-99C2-4382-8401-731CA732B693}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueueDataType", "QueueDataType\QueueDataType.csproj", "{146E7B6D-D1BB-479D-8047-3112F1D3C07E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{D4EC68ED-99C2-4382-8401-731CA732B693}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4EC68ED-99C2-4382-8401-731CA732B693}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4EC68ED-99C2-4382-8401-731CA732B693}.Release|Any CPU.Build.0 = Release|Any CPU
+		{146E7B6D-D1BB-479D-8047-3112F1D3C07E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{146E7B6D-D1BB-479D-8047-3112F1D3C07E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{146E7B6D-D1BB-479D-8047-3112F1D3C07E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{146E7B6D-D1BB-479D-8047-3112F1D3C07E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
