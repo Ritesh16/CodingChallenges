@@ -1,4 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using TreeDataType;
+using TreeDataType.AVL.Types;
 using TreeDataType.BinaryTree;
 
 Console.WriteLine("Binary Tree Traversal!");
@@ -278,6 +280,17 @@ while (choice == "a")
             Console.WriteLine();
             break;
 
+        case "19":
+            AVLTree<int> avlTree = new AVLTree<int>();
+            avlTree.Insert(10);
+            avlTree.Insert(20);
+            avlTree.Insert(30);
+            avlTree.Insert(40);
+            avlTree.Insert(50);
+            avlTree.Insert(25);
+
+            avlTree.PreOrderTraversal();
+            break;
         default:
             Console.WriteLine("Wrong choice");
             break;
