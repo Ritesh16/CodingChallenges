@@ -12,6 +12,59 @@ heap.Insert(15);
 heap.Insert(10);
 heap.Insert(25);
 heap.Insert(5);
+heap.Insert(70);
 
 
-Console.WriteLine("Hello, World!");
+heap.Display();
+heap.Sort();
+heap.Display();
+
+//Console.WriteLine("Deleting from max heap");
+//heap.Delete();
+//Console.WriteLine("*******************");
+//heap.Display();
+
+
+//Console.WriteLine("Deleting from max heap");
+//heap.Delete();
+//Console.WriteLine("*******************");
+//heap.Display();
+
+//Console.WriteLine("Deleting from max heap");
+//heap.Delete();
+//Console.WriteLine("*******************");
+//heap.Display();
+
+
+//Console.WriteLine("Deleting from max heap");
+//heap.Delete();
+//Console.WriteLine("*******************");
+//heap.Display();
+
+
+//Console.WriteLine("Deleting from max heap");
+//heap.Delete();
+//Console.WriteLine("*******************");
+//heap.Display();
+
+
+//Console.WriteLine("Deleting from max heap");
+//heap.Delete();
+//Console.WriteLine("*******************");
+//heap.Display();
+
+
+//Console.WriteLine("Deleting from max heap");
+//heap.Delete();
+//Console.WriteLine("*******************");
+//heap.Display();
+
+
+//Console.WriteLine("Deleting from max heap");
+//heap.Delete();
+//Console.WriteLine("*******************");
+//heap.Display();
+
+
+//Console.WriteLine("****************Sort*******************");
+//heap.Sort();
