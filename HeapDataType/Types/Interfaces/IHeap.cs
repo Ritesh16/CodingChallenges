@@ -6,7 +6,6 @@
         void Insert(int value);
         void Delete();
         void Display();
-
         void Sort();
     }
 }

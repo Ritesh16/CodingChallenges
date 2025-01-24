@@ -4,7 +4,7 @@ using HeapDataType.Types.Interfaces;
 
 Console.WriteLine("Hello, World!");
 
-IHeap heap = new MaxHeap(10);
+IHeap heap = new MaxHeap(8);
 heap.Insert(40);
 heap.Insert(35);
 heap.Insert(30);
@@ -19,52 +19,3 @@ heap.Display();
 heap.Sort();
 heap.Display();
 
-//Console.WriteLine("Deleting from max heap");
-//heap.Delete();
-//Console.WriteLine("*******************");
-//heap.Display();
-
-
-//Console.WriteLine("Deleting from max heap");
-//heap.Delete();
-//Console.WriteLine("*******************");
-//heap.Display();
-
-//Console.WriteLine("Deleting from max heap");
-//heap.Delete();
-//Console.WriteLine("*******************");
-//heap.Display();
-
-
-//Console.WriteLine("Deleting from max heap");
-//heap.Delete();
-//Console.WriteLine("*******************");
-//heap.Display();
-
-
-//Console.WriteLine("Deleting from max heap");
-//heap.Delete();
-//Console.WriteLine("*******************");
-//heap.Display();
-
-
-//Console.WriteLine("Deleting from max heap");
-//heap.Delete();
-//Console.WriteLine("*******************");
-//heap.Display();
-
-
-//Console.WriteLine("Deleting from max heap");
-//heap.Delete();
-//Console.WriteLine("*******************");
-//heap.Display();
-
-
-//Console.WriteLine("Deleting from max heap");
-//heap.Delete();
-//Console.WriteLine("*******************");
-//heap.Display();
-
-
-//Console.WriteLine("****************Sort*******************");
-//heap.Sort();

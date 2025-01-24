@@ -48,43 +48,24 @@ namespace HeapDataType.Types
             HeapifyDown(0);
             _length--;
         }
-        private void Swap(int index1, int index2)
+
+        public void Sort()
         {
-            int temp = _data[index1];
-            _data[index1] = _data[index2];
-            _data[index2] = temp;
-        }
-        private void HeapifyUp(int length)
-        {
-            var i = length;
-            while (i != 0 && _data[i] > _data[(i - 1) / 2])
+            for (var i = _length - 1; i > 0; i--)
             {
-                Swap(i, (i - 1) / 2);
-                i = (i - 1) / 2;
+                // Swap the root (maximum value) with the last element of the heap
+                Swap(0, i);
+
+                // Temporarily decrease the length to ignore the sorted part of the array
+                _length--;
+
+                // Heapify down from the root to maintain the max-heap property
+                HeapifyDown(0);
             }
+
+            // Reset the length after sorting
+            _length = _data.Length;
         }
-        private void HeapifyDown(int index)
-        {
-            while (true)
-            {
-                int largest = index;
-                int leftChild = 2 * index + 1;
-                int rightChild = 2 * index + 2;
-
-                if (leftChild < _size && _data[leftChild] > _data[largest])
-                    largest = leftChild;
-
-                if (rightChild < _size && _data[rightChild] > _data[largest])
-                    largest = rightChild;
-
-                if (largest == index) break;
-
-                Swap(index, largest);
-                index = largest;
-            }
-        }
-
-
         public void Display()
         {
             if (_data == null || _data.Length == 0)
@@ -100,42 +81,55 @@ namespace HeapDataType.Types
             Console.WriteLine();
         }
 
-        public void Sort()
+
+        private void Swap(int index1, int index2)
         {
-            for (var i = _data.Length - 1; i > 0; i--)
+            int temp = _data[index1];
+            _data[index1] = _data[index2];
+            _data[index2] = temp;
+        }
+        private void HeapifyUp(int length)
+        {
+            var i = length;
+            while (i != 0 && _data[i] > _data[(i - 1) / 2])
             {
-                Swap(0, i);
-                Heapify(_data, i, 0);
+                Swap(i, (i - 1) / 2);
+                i = (i - 1) / 2;
             }
         }
 
-        private void Heapify(int[] array, int n, int i)
+        private void HeapifyDown(int index)
         {
-            int largest = i; // Initialize largest as root
-            int left = 2 * i + 1; // Left child index
-            int right = 2 * i + 2; // Right child index
-
-            // If left child is larger than root
-            if (left < n && array[left] > array[largest])
+            while (true)
             {
-                largest = left;
+                int largest = index;
+                int leftChild = (2 * index) + 1;
+                int rightChild = (2 * index) + 2;
+
+                // Check if the left child exists and is greater than the current node
+                if (leftChild < _length && _data[leftChild] > _data[largest])
+                {
+                    largest = leftChild;
+                }
+
+                // Check if the right child exists and is greater than the current node
+                if (rightChild < _length && _data[rightChild] > _data[largest])
+                {
+                    largest = rightChild;
+                }
+
+                // If the largest node is the current node, stop heapifying down
+                if (largest == index)
+                {
+                    break;
+                }
+
+                // Swap the current node with the largest child
+                Swap(index, largest);
+
+                // Update the index to the largest child
+                index = largest;
             }
-
-            // If right child is larger than largest so far
-            if (right < n && array[right] > array[largest])
-            {
-                largest = right;
-            }
-
-            // If largest is not root
-            if (largest != i)
-            {
-                Swap(i, largest);
-
-                // Recursively heapify the affected sub-tree
-                Heapify(array, n, largest);
-            }
-
         }
     }
 }
