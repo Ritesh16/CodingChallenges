@@ -9,6 +9,7 @@ while (flag)
     Console.WriteLine("1. Bubble Sort");
     Console.WriteLine("2. Insertion Sort");
     Console.WriteLine("3. Selection Sort");
+    Console.WriteLine("4. Quick Sort");
     Console.WriteLine("9. Exit");
 
     var choice = Convert.ToInt32(Console.ReadLine());
@@ -42,6 +43,18 @@ while (flag)
                 Console.Write(item + " ");
             }
             break;
+        case 4:
+            var quickSort = new Sorting.QuickSort.CodeFile();
+            var sortedArray4 = quickSort.Sort(array, 0 , array.Length - 1);
+
+            Console.WriteLine("Sorted array using Quick Sort:");
+
+            foreach (int i in sortedArray4)
+            {
+                Console.WriteLine(i);
+            }
+            break;
+
         case 9:
             flag = false;
             break;
