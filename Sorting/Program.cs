@@ -12,6 +12,7 @@ while (flag)
     Console.WriteLine("4. Quick Sort");
     Console.WriteLine("5. Merge Sort Recursive");
     Console.WriteLine("6. Merge Sort Iterative");
+    Console.WriteLine("7. Count Sort");
     Console.WriteLine("9. Exit");
 
     var choice = Convert.ToInt32(Console.ReadLine());
@@ -75,6 +76,18 @@ while (flag)
             Console.WriteLine("Sorted array using Merge Sort Iterative:");
 
             foreach (int i in array)
+            {
+                Console.WriteLine(i);
+            }
+            break;
+
+        case 7:
+            var countSort = new Sorting.CountSort.CodeFile();
+            var sortedAray6 = countSort.Sort(array);
+
+            Console.WriteLine("Sorted array using Count Sort");
+
+            foreach (int i in sortedAray6)
             {
                 Console.WriteLine(i);
             }
