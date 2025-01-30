@@ -39,7 +39,7 @@ namespace Sorting.CountSort
 
         private int FindMax(int[] nums)
         {
-            var max = int.MinValue;
+            var max = nums[0];
             for (int i = 0; i < nums.Length; i++)
             {
                 if (nums[i] > max)
