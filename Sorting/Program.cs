@@ -14,7 +14,9 @@ while (flag)
     Console.WriteLine("6. Merge Sort Iterative");
     Console.WriteLine("7. Count Sort");
     Console.WriteLine("8. Bucket Sort");
-    Console.WriteLine("9. Exit");
+    Console.WriteLine("9. Radix Sort");
+    Console.WriteLine("10. Shell Sort");
+    Console.WriteLine("99. Exit");
 
     var choice = Convert.ToInt32(Console.ReadLine());
 
@@ -104,8 +106,32 @@ while (flag)
                 Console.WriteLine(i);
             }
             break;
-
         case 9:
+            var radixSortArray = new int[] { 66, 75, 2, 802, 170, 24, 90, 45 };
+            var radixSort = new Sorting.RadixSort.CodeFile();
+            var sortedAray8 = radixSort .Sort(radixSortArray);
+
+            Console.WriteLine("Sorted array using Radix Sort");
+
+            foreach (int i in sortedAray8)
+            {
+                Console.WriteLine(i);
+            }
+            break;
+
+        case 10:
+            var shellSort = new Sorting.ShellSort.CodeFile();
+            var sortedAray9 = shellSort.Sort(array);
+
+            Console.WriteLine("Sorted array using Shell Sort");
+
+            foreach (int i in sortedAray9)
+            {
+                Console.WriteLine(i);
+            }
+            break;
+
+        case 99:
             flag = false;
             break;
 
