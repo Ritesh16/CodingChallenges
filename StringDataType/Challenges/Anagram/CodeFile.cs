@@ -10,6 +10,11 @@ namespace StringDataType.Challenges.Anagram
     {
         public bool CheckAnagram(string input1, string input2)
         {
+            if (input1 == null || input2 == null || input1.Length != input2.Length)
+            {
+                return false;
+            }
+
             var bits = new int[128];
             var result = true;
 
